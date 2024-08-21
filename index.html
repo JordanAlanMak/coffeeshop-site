@@ -8,75 +8,113 @@
 		
 		<title>Blank Template</title>
 
-		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+		<!-- CSS links -->
+		<link rel="stylesheet" href="styles/css/main.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+		
+		<!-- JS links -->
+		<script src="https://kit.fontawesome.com/4d9bf8ada8.js" crossorigin="anonymous"></script>
+		<script src="js/main.js"></script>
 	</head>
 	<body>
-		<header>
-			<nav>
+		<nav class="row">
+			<section class="col-xs-6">
+				<img class="header-logo" src="assets/img/logo/coffeeshop-logo-dark-purple.png" alt="The Coffee Spot logo">
+			</section>
+			<section class="col-xs-6 end-xs">
+				<div class="row end-xs">
+					<i class="fas fa-bars"></i>
+				</div>
+			</section>
+			<div class="hide">
 				<ul>
 					<li>Home</li>
 					<li>About Us</li>
 					<li>Menu</li>
+					<li>Reviews</li>
 					<li>Contact</li>
 				</ul>
-			</nav>
-			<form action="">
-				<!-- Search element here -->
-			</form>
+			</div>
+			<div class="hide">
+				<ul>
+					<li>Home</li>
+					<li>About Us</li>
+					<li>Menu</li>
+					<li>Reviews</li>
+					<li>Contact</li>
+				</ul>
+			</div>
+		</nav>
+		<header class="row text-center">
+			<!-- Hero -->
+			<section class="row center-xs">
+				<div class="col-xs-12">
+					<h1>Welcome to our Craft Coffee Shop</h1>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p>Whether you've been searching for artisan coffee, your new favorite brunch hangout, or delectable baked goods, you've found the right spot.</p>
+				</div>
+				<div class="col-xs-12">
+					<form onclick="event.preventDefault();">
+						<button>Explore Menu</button>
+						<button>Contact Us</button>
+					</form>
+				</div>
+			</section>
 		</header>
 		<main id="main-content">
-			<!-- Welcome -->
-			<section>
-				<h1>Welcome to our Coffeeshop</h1>
-				<form>
-					<input type="text">
-					<button>Location?</button>
-				</form>
-			</section>
 			<!-- About Us -->
-			<section>
-				<h3>About us</h3>
-				<h2>Our Coffee Journey</h2>
-				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex iusto officia animi sint veritatis aperiam eos, fugit nulla aspernatur quos, at, nobis inventore quas deleniti voluptatem nostrum aliquam autem iure.</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
-				<button>Explore Menu</button>
+			<section id="about-content" class="row center-xs text-center">
+				<div class="col-xs-12">
+					<h3>About us</h3>
+					<h2>Our Coffee Journey</h2>
+				</div>
+				<figure class="col-xs-12 col-sm-8">
+					<img src="assets/img/coffee_pouring.jpg" alt="guy pouring coffee">
+				</figure>
+				<div class="col-xs-10 col-sm-8">
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex iusto officia animi sint veritatis aperiam eos, fugit nulla aspernatur quos, at, nobis inventore quas deleniti voluptatem nostrum aliquam autem iure.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
+				</div>
 			</section>
 			<!-- Order -->
-			<section>
-				<h3>Order Online</h3>
-				<h2>Our Specialty Coffee</h2>
+			<section id="menu-content" class="row center-xs text-center">
+				<div class="col-xs-12">
+					<h3>Our Menu</h3>
+					<h2>Browse our specialties!</h2>
+				</div>
 				<!-- Gallery -->
-				<div>
-					<nav>
-						<ul>
-							<li>Favorites</li>
-							<li>Coffee</li>
-							<li>Breakfast</li>
-							<li>Lunch</li>
-							<li>Bakery</li>
-						</ul>
-					</nav>
-					<!-- Repeat x8 -->
-					<div>
-						<span>$6.99</span>
-						<div>
-							<!-- Font Awesome? 5 stars -->
-						</div>
-						<span>Super Cool Latte</span>
+				<nav class="row">
+					<ul class="row center-xs text-center">
+						<li class="col-xs-3">Drinks</li>
+						<li class="col-xs-3">Bakery</li>
+						<li class="col-xs-3">Brunch</li>
+						<li class="col-xs-3">Lunch</li>
+					</ul>
+				</nav>
+
+				<!-- Item Card x4 -->
+				<div class="row">
+					<div class="row">
+						<h5>$6.99</h5>
 					</div>
-					<!-- Dot nav -->
-					 <div></div>
+					<div class="row">
+						<h4>Super Cool Latte</h4>
+					</div>
 				</div>
 			</section>
 			<!-- Contact -->
-			<section>
-				<h3>Contact Us</h3>
-				<h2>Phone & Hours</h2>
+			<section id="contact-content" class="row left-xs">
+				<div>
+					<h3>Contact Us</h3>
+					<h2>Phone & Hours</h2>
+				</div>
 				<div>
 					<!-- Phone -->
-					<i></i>
+					<i class="fas fa-phone"></i>
 					<h4>Call Now</h4>
 					<span>123-456-7890</span>
 				</div>

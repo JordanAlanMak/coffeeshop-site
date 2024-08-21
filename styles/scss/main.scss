@@ -1,0 +1,87 @@
+/******************************************
+/* IMPORTS
+/*******************************************/
+@import "variables/main.scss";
+@import "mixins/main.scss";
+@import "grid";
+@import "visibility"; // Visibility last for precedence
+
+/******************************************
+/* NOTES
+/*******************************************/
+// Command to watch sass files and compile to css
+// sass --watch scss/main.scss:css/main.css
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+:root {
+    $light-brown: #f4d6ba;
+    $orange-brown: #de9861;
+    $dark-brown: #713928;
+    $dark-purple: #362f2f;
+  }
+
+  body, figure {
+    margin: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  nav {
+    padding: 0.5rem 0;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .header-logo {
+      width: 203px;
+      height: 30px;
+    }
+    i {
+      font-size: 16px;
+      padding: 7px 0;
+    }
+  }
+  
+  main {
+    
+  }
+  
+  #about-content {
+    figure {
+        width: 100%;
+        // width:300px;
+        // height: 200px;
+    }
+    /* temporary - fix src img later */
+    img {
+      width: 100%;
+    }
+  }
+  
+  footer {
+  
+  }
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-justify {
+    text-align: justify;
+  }
