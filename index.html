@@ -12,41 +12,30 @@
 		<link rel="stylesheet" href="styles/css/main.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
 		
 		<!-- JS links -->
 		<script src="https://kit.fontawesome.com/4d9bf8ada8.js" crossorigin="anonymous"></script>
-		<script src="js/main.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
 		<nav class="row">
 			<section class="col-xs-6">
 				<img class="header-logo" src="assets/img/logo/coffeeshop-logo-dark-purple.png" alt="The Coffee Spot logo">
 			</section>
-			<section class="col-xs-6 end-xs">
-				<div class="row end-xs">
-					<i class="fas fa-bars"></i>
-				</div>
+			<section class="col-xs-6">
+				<!-- <div class="row end-xs">
+					<i class="fas fa-bars show-xs hide-md"></i>
+				</div> -->
+				<ul class="row middle-xs end-xs">
+					<li>Home</li>
+					<li>About Us</li>
+					<li>Menu</li>
+					<li>Reviews</li>
+					<li>Contact</li>
+				</ul>
 			</section>
-			<div class="hide">
-				<ul>
-					<li>Home</li>
-					<li>About Us</li>
-					<li>Menu</li>
-					<li>Reviews</li>
-					<li>Contact</li>
-				</ul>
-			</div>
-			<div class="hide">
-				<ul>
-					<li>Home</li>
-					<li>About Us</li>
-					<li>Menu</li>
-					<li>Reviews</li>
-					<li>Contact</li>
-				</ul>
-			</div>
 		</nav>
 		<header class="row text-center">
 			<!-- Hero -->
@@ -83,16 +72,16 @@
 			<!-- Order -->
 			<section id="menu-content" class="row center-xs text-center">
 				<div class="col-xs-12">
-					<h3>Our Menu</h3>
-					<h2>Browse our specialties!</h2>
+					<h3>Menu</h3>
+					<h2>See the Local Favorites</h2>
 				</div>
 				<!-- Gallery -->
 				<nav class="row">
 					<ul class="row center-xs text-center">
-						<li class="col-xs-3">Drinks</li>
-						<li class="col-xs-3">Bakery</li>
-						<li class="col-xs-3">Brunch</li>
-						<li class="col-xs-3">Lunch</li>
+						<li>Drinks</li>
+						<li>Bakery</li>
+						<li>Brunch</li>
+						<li>Lunch</li>
 					</ul>
 				</nav>
 
@@ -106,55 +95,84 @@
 					</div>
 				</div>
 			</section>
-			<!-- Contact -->
-			<section id="contact-content" class="row left-xs">
-				<div>
-					<h3>Contact Us</h3>
-					<h2>Phone & Hours</h2>
-				</div>
-				<div>
-					<!-- Phone -->
-					<i class="fas fa-phone"></i>
-					<h4>Call Now</h4>
-					<span>123-456-7890</span>
-				</div>
-				<div>
-					<h4>Monday to Thursday</h4>
-					<span>07:00 am - 07:00 pm</span>
-				</div>
-				<div>
-					<h4>Friday to Sunday</h4>
-					<span>07:00 am - 09:00 pm</span>
-				</div>
-			</section>
 
 			<!-- Testimonial Carousel -->
-			<section>
-				<h3>Testimonials</h3>
-				<h2>Customers Love Us</h2>
-				 <div>
-					<figure>
+			<section class="text-center">
+				<div class="row flex-column">
+					<h3>Testimonials</h3>
+					<h2>See What Customers are Saying</h2>
+				</div>
+				 <div class="row center-xs">
+					<figure class="col-sm-9 col-md-7">
 						<img src="#" alt="">
 						<figcaption>
-							<cite>Mr. John Smith</cite>
-							<span>Art Director</span>
+							<cite>Charles Wilkins</cite>
 						</figcaption>
 						<div>
-							<!-- Star Ratings -->
+							<i class="far fa-star"></i>
+							<i class="far fa-star"></i>
+							<i class="far fa-star"></i>
+							<i class="far fa-star"></i>
+							<i class="far fa-star"></i>
 						</div>
 						<blockquote>
-							<!-- Quote here -->
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
 						</blockquote>
 					</figure>
 				 </div>
 			</section>
+
+			<!-- Contact -->
+			<section id="contact-content" class="row">
+				<div class="col-xs-12 text-center">
+					<h3>Contact Us</h3>
+					<h2>Call or Email Now</h2>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<div class="row">
+						<div class="row">
+							<i class="fas fa-phone"></i>
+							<span>&nbsp;Phone</span>
+						</div>
+						<div class="row">
+							<span>123-456-7890</span>
+						</div>
+					</div>
+					<div class="row flex-column">
+						<span>Monday to Thursday</span>
+						<span>07:00 am - 07:00 pm</span>
+					</div>
+					<div class="row flex-column">
+						<span>Friday to Sunday</span>
+						<span>07:00 am - 09:00 pm</span>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<form onclick="event.preventDefault();">
+						<div>
+							<label for="name">Name</label>
+							<input type="text" id="name" name="name">
+						</div>
+						<div>
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email">
+						</div>
+						<div>
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="5"></textarea>
+						</div>
+					</form>
+				</div>
+			</section>
 		</main>
 		<footer>
-			<section>
-				<!-- Site Map -->
-			</section>
+			<nav class="row text-center">
+				<ul class="row center-xs">	
+					<li><span>Design:</span> Jordan Mak</li>
+					<li><span>Images:</span> Unsplash</li>
+					<li><span>Copyright/License</span></li>
+				</ul>
+			</nav>
 		</footer>
-
-		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
