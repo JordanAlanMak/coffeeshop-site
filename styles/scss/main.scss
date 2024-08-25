@@ -9,79 +9,194 @@
 /******************************************
 /* NOTES
 /*******************************************/
-// Command to watch sass files and compile to css
-// sass --watch styles/scss/main.scss:styles/css/main.css
+/*
+Command to watch sass files and compile to css
+sass --watch styles/scss/main.scss:styles/css/main.css
+*/
 
 /******************************************
 /* BASE STYLES
 /*******************************************/
-:root {
-    $light-brown: #f4d6ba;
-    $orange-brown: #de9861;
-    $dark-brown: #713928;
-    $dark-purple: #362f2f;
-  }
+$light-brown: #f4d6ba;
+$orange: #f69800;
+$orange-brown: #de9861;
+$dark-brown: #713928;
+$dark-purple: #362f2f;
+$white: #fff;
 
-  body, figure {
+body {
+  color: $dark-purple;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family:'Bitter', Georgia, serif
+}
+body, figure {
+  margin: 0;
+}
+h1,h2,h3,h4,p {
+  margin-top: 0;
+  letter-spacing: 0.05rem;
+  line-height: normal;
+}
+h5,h6 {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+h1,h2 {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  li {
+    padding: 0 0.5rem;
+  }
+}
+nav li {
+  padding: 0 0.5rem;
+}
+a {
+  color: $orange;
+  :hover, :visited {
+    color: $orange;
+  }
+}
+ul.buttons {
+  cursor: default;
+  li {
+  }
+  a {
+    text-shadow: none;
+    text-decoration: none;
+    color: $white;
+    background-color: $orange;
+    border-radius: 8px;
+    box-shadow: 2px 3px 0 2px $dark-purple;
+    padding: 0.8rem 1rem;
+    height: 3rem;
+    line-height: 3rem;
+    &:hover {
+      color: $white;
+      background-color: $dark-purple;
+      box-shadow: 2px 3px 0 2px $orange;
+      i {
+        color: $orange;
+      }
+    }
+  }
+}
+
+/******************************************
+/* LAYOUT/SECTIONS
+/*******************************************/
+#main-nav {
+  position: fixed;
+  color: $white; // make link hover $orange
+  background-color: $dark-purple;
+  padding: 5px 0;
+  .header-logo {
+    width: 203px;
+    height: 30px;
+  }
+  i {
+    font-size: 22px;
+    padding: 4px 0;
+  }
+}
+
+header {
+  color: white;
+  height: 30rem;
+  padding-top: 40px;
+  text-shadow:
+    0px 2px 3px rgba($dark-purple,0.7),
+    0px 4px 5px rgba($dark-purple,0.5);
+  background:
+    linear-gradient(to bottom, rgba($dark-purple, 30%) 75%, rgba($dark-purple, 0%) 100%),
+    url("../../assets/img/bg/coffee-hero-bg.webp")
+    right top
+    no-repeat
+    $light-brown;
+  h1 {
+    font-size: 2.5rem;
     margin: 0;
   }
-  
-  * {
-    box-sizing: border-box;
+  p {
+    letter-spacing: 0.04rem;
+    font-size: 1rem;
+  }
+  span {
+    color:$orange;
+  }
+  & > section > * {
+    margin-bottom: 2rem;
+  }
+}
+
+main {
+  section {
+    padding-top: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    color: $orange;
+    margin-bottom: 0;
   }
   
-  
-  /******************************************
-  /* LAYOUT
-  /*******************************************/
-  nav {
-    padding: 0.5rem 0;
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    .header-logo {
-      width: 203px;
-      height: 30px;
-    }
-    i {
-      font-size: 16px;
-      padding: 7px 0;
-    }
-  }
-  
-  main {
-    
-  }
-  
-  #about-content {
-    figure {
-        width: 100%;
-        // width:300px;
-        // height: 200px;
-    }
-    /* temporary - fix src img later */
-    img {
+}
+
+#about-content {
+  figure {
       width: 100%;
-    }
+      // width:300px;
+      // height: 200px;
   }
-  
-  footer {
-  
+  /* temporary - fix src img later */
+  img {
+    width: 100%;
+    border-radius: 0.5rem;
   }
-  
-  /******************************************
-  /* ADDITIONAL STYLES
-  /*******************************************/
-  .text-left {
-    text-align: left;
+}
+
+#contact-content {
+  form {
+    margin-top: 5rem;
   }
-  .text-right {
-    text-align: right;
+  input {
+    width: 100%;
   }
-  .text-center {
-    text-align: center;
+  textarea {
+    width: 100%;
+    height: 5rem;
   }
-  .text-justify {
-    text-align: justify;
+  li:first-child {
+    padding-left: 0;
   }
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.margin-bottom {
+  margin-bottom: 1rem;
+}

@@ -6,13 +6,14 @@
 		<meta name="keywords" content="one, two, three">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Blank Template</title>
+		<title>The Coffee Spot</title>
 
 		<!-- CSS links -->
 		<link rel="stylesheet" href="styles/css/main.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>.
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 		
 		<!-- JS links -->
@@ -20,14 +21,14 @@
 		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
-		<nav class="row">
-			<section class="col-xs-6">
-				<img class="header-logo" src="assets/img/logo/coffeeshop-logo-dark-purple.png" alt="The Coffee Spot logo">
+		<!-- NAV -->
+		<nav id="main-nav" class="row between-xs">
+			<section class="col-xs-8">
+				<div class="row">
+					<img class="header-logo" src="assets/img/logo/coffeeshop-logo.webp" alt="The Coffee Spot logo">
+				</div>
 			</section>
-			<section class="col-xs-6">
-				<!-- <div class="row end-xs">
-					<i class="fas fa-bars show-xs hide-md"></i>
-				</div> -->
+			<section class="col-xs-6 hide">
 				<ul class="row middle-xs end-xs">
 					<li>Home</li>
 					<li>About Us</li>
@@ -36,48 +37,53 @@
 					<li>Contact</li>
 				</ul>
 			</section>
+			<section class="col-xs-2">
+				<div class="row end-xs">
+					<i class="fas fa-bars show-xs hide-md"></i>
+				</div>
+			</section>
 		</nav>
-		<header class="row text-center">
-			<!-- Hero -->
-			<section class="row center-xs">
+		<header class="row">
+			<!-- HERO -->
+			<section class="row natural-height align-center text-center">
 				<div class="col-xs-12">
-					<h1>Welcome to our Craft Coffee Shop</h1>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<p>Whether you've been searching for artisan coffee, your new favorite brunch hangout, or delectable baked goods, you've found the right spot.</p>
+					<h1><span>Welcome to</span><br>The Coffee Spot</h1>
 				</div>
 				<div class="col-xs-12">
-					<form onclick="event.preventDefault();">
-						<button>Explore Menu</button>
-						<button>Contact Us</button>
-					</form>
+					<p>Artisan coffee, hearty brunch dishes and delectable bakery treats. Find your new spot to work, chat or relax.</p>
+				</div>
+				<div class="col-xs-12">
+					<ul class="row buttons center-xs">
+						<li><a href="#"><i class="fa-solid fa-utensils"></i> Explore Menu</a></li>
+						<li><a href="#"> <i class="fa-solid fa-phone"></i> Contact Us</a></li>
+					</ul>
 				</div>
 			</section>
 		</header>
 		<main id="main-content">
-			<!-- About Us -->
-			<section id="about-content" class="row center-xs text-center">
-				<div class="col-xs-12">
-					<h3>About us</h3>
+			<!-- ABOUT US -->
+			<section id="about-content" class="row center-xs">
+				<div class="col-xs-12 text-center">
+					<h3>About Us</h3>
 					<h2>Our Coffee Journey</h2>
 				</div>
 				<figure class="col-xs-12 col-sm-8">
-					<img src="assets/img/coffee_pouring.jpg" alt="guy pouring coffee">
+					<img src="assets/img/coffee-pouring.webp" alt="guy pouring coffee">
 				</figure>
-				<div class="col-xs-10 col-sm-8">
+				<div class="col-xs-12 col-sm-8">
 					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex iusto officia animi sint veritatis aperiam eos, fugit nulla aspernatur quos, at, nobis inventore quas deleniti voluptatem nostrum aliquam autem iure.</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
 				</div>
 			</section>
-			<!-- Order -->
-			<section id="menu-content" class="row center-xs text-center">
-				<div class="col-xs-12">
+			<!-- MENU -->
+			<section id="menu-content" class="row center-xs">
+				<div class="col-xs-12 text-center">
 					<h3>Menu</h3>
-					<h2>See the Local Favorites</h2>
+					<h2>Find Your Favorites</h2>
 				</div>
 				<!-- Gallery -->
 				<nav class="row">
-					<ul class="row center-xs text-center">
+					<ul class="row center-xs">
 						<li>Drinks</li>
 						<li>Bakery</li>
 						<li>Brunch</li>
@@ -96,13 +102,13 @@
 				</div>
 			</section>
 
-			<!-- Testimonial Carousel -->
-			<section class="text-center">
-				<div class="row flex-column">
+			<!-- TESTIMONIALS -->
+			<section class="row">
+				<div class="col-xs-12 text-center">
 					<h3>Testimonials</h3>
-					<h2>See What Customers are Saying</h2>
+					<h2>What People are Saying</h2>
 				</div>
-				 <div class="row center-xs">
+				 <div class="row center-xs text-center">
 					<figure class="col-sm-9 col-md-7">
 						<img src="#" alt="">
 						<figcaption>
@@ -122,44 +128,69 @@
 				 </div>
 			</section>
 
-			<!-- Contact -->
+			<!-- CONTACT -->
 			<section id="contact-content" class="row">
 				<div class="col-xs-12 text-center">
 					<h3>Contact Us</h3>
-					<h2>Call or Email Now</h2>
+					<h2>Call or Email</h2>
 				</div>
-				<div class="col-xs-12 col-md-6">
-					<div class="row">
-						<div class="row">
-							<i class="fas fa-phone"></i>
-							<span>&nbsp;Phone</span>
+				<div class="col-xs-6">
+					<div class="row margin-bottom">
+						<div class="col-xs-12">
+							<h5><i class="fa-solid fa-phone"></i> Phone:</h5>
 						</div>
-						<div class="row">
+						<div class="col-xs-12">
 							<span>123-456-7890</span>
 						</div>
 					</div>
-					<div class="row flex-column">
-						<span>Monday to Thursday</span>
-						<span>07:00 am - 07:00 pm</span>
+					<div class="row">
+						<div class="col-xs-12">
+							<h5><i class="fa-solid fa-clock"></i> Hours:</h5>
+						</div>
+						<div class="col-xs-12">
+							<span>7am to 9pm</span>
+						</div>
 					</div>
-					<div class="row flex-column">
-						<span>Friday to Sunday</span>
-						<span>07:00 am - 09:00 pm</span>
+				</div>
+				<div class="col-xs-6">
+					<div class="row">
+						<div class="col-xs-12">
+							<h5><i class="fa-solid fa-map"></i> Address:</h5>
+						</div>
+						<div class="col-xs-12">
+							<div class="row flex-column">
+								<span>123 Coffee St</span>
+								<span>Phoenix, AZ 12345</span>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<h5><i class="fa-solid fa-thumbs-up"></i> Follow:</h5>
+						</div>
+						<div class="col-xs-12">
+							<ul class="row">
+								<li><i class="fa-brands fa-square-facebook"></i></li>
+								<li><i class="fa-brands fa-square-instagram"></i></li>
+								<li><i class="fa-brands fa-square-twitter"></i></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-6">
-					<form onclick="event.preventDefault();">
-						<div>
+					<form onclick="event.preventDefault();" class="row">
+						<div class="col-xs-6">
 							<label for="name">Name</label>
 							<input type="text" id="name" name="name">
 						</div>
-						<div>
+						<div class="col-xs-6">
 							<label for="email">Email</label>
 							<input type="email" id="email" name="email">
 						</div>
-						<div>
-							<label for="message">Message</label>
-							<textarea id="message" name="message" rows="5"></textarea>
+						<div class="col-xs-12">
+							<label for="message">Message</label><br>
+							<textarea id="message" name="message"></textarea>
+						</div>
+						<div class="col-xs-4">
+							<input type="submit" value="Submit">
 						</div>
 					</form>
 				</div>
@@ -167,9 +198,9 @@
 		</main>
 		<footer>
 			<nav class="row text-center">
-				<ul class="row center-xs">	
-					<li><span>Design:</span> Jordan Mak</li>
-					<li><span>Images:</span> Unsplash</li>
+				<ul class="row center-xs">
+					<li><span>Design:</span> <a href="#">Jordan Mak</a></li>
+					<li><span>Images:</span> <a href="#">Unsplash</a></li>
 					<li><span>Copyright/License</span></li>
 				</ul>
 			</nav>
