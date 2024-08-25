@@ -11,7 +11,7 @@
 		<!-- CSS links -->
 		<link rel="stylesheet" href="styles/css/main.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>.
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -129,60 +129,46 @@
 			</section>
 
 			<!-- CONTACT -->
-			<section id="contact-content" class="row">
-				<div class="col-xs-12 text-center">
+			<section id="contact-content" class="row text-center">
+				<div class="col-xs-12">
 					<h3>Contact Us</h3>
 					<h2>Call or Email</h2>
 				</div>
 				<div class="col-xs-6">
-					<div class="row margin-bottom">
-						<div class="col-xs-12">
-							<h5><i class="fa-solid fa-phone"></i> Phone:</h5>
-						</div>
-						<div class="col-xs-12">
-							<span>123-456-7890</span>
-						</div>
+					<div class="row flex-column">
+						<h5><i class="fa-solid fa-phone"></i> Phone</h5>
+						<span>123-456-7890</span>
 					</div>
-					<div class="row">
-						<div class="col-xs-12">
-							<h5><i class="fa-solid fa-clock"></i> Hours:</h5>
-						</div>
-						<div class="col-xs-12">
-							<span>7am to 9pm</span>
-						</div>
+					<div class="row flex-column">
+						<h5><i class="fa-solid fa-clock"></i> Hours</h5>
+						<span>7am to 9pm</span>
 					</div>
 				</div>
 				<div class="col-xs-6">
-					<div class="row">
-						<div class="col-xs-12">
-							<h5><i class="fa-solid fa-map"></i> Address:</h5>
+					<div class="row flex-column">
+						<h5><i class="fa-solid fa-map"></i> Address</h5>
+						<div class="row flex-column">
+							<span>123 Coffee St</span>
+							<span>Phoenix, AZ 12345</span>
 						</div>
-						<div class="col-xs-12">
-							<div class="row flex-column">
-								<span>123 Coffee St</span>
-								<span>Phoenix, AZ 12345</span>
-							</div>
-						</div>
-						<div class="col-xs-12">
-							<h5><i class="fa-solid fa-thumbs-up"></i> Follow:</h5>
-						</div>
-						<div class="col-xs-12">
-							<ul class="row">
-								<li><i class="fa-brands fa-square-facebook"></i></li>
-								<li><i class="fa-brands fa-square-instagram"></i></li>
-								<li><i class="fa-brands fa-square-twitter"></i></li>
-							</ul>
-						</div>
+					</div>
+					<div class="row flex-column">
+						<h5><i class="fa-solid fa-hashtag"></i> Follow</h5>
+						<ul class="row center-xs">
+							<li><i class="fa-brands fa-square-facebook"></i></li>
+							<li><i class="fa-brands fa-square-instagram"></i></li>
+							<li><i class="fa-brands fa-square-twitter"></i></li>
+						</ul>
 					</div>
 				</div>
 				<div class="col-xs-12 col-md-6">
-					<form onclick="event.preventDefault();" class="row">
+					<form onclick="event.preventDefault();" class="row text-left">
 						<div class="col-xs-6">
-							<label for="name">Name</label>
+							<label for="name">Your Name</label>
 							<input type="text" id="name" name="name">
 						</div>
 						<div class="col-xs-6">
-							<label for="email">Email</label>
+							<label for="email">Your Email</label>
 							<input type="email" id="email" name="email">
 						</div>
 						<div class="col-xs-12">
@@ -190,7 +176,11 @@
 							<textarea id="message" name="message"></textarea>
 						</div>
 						<div class="col-xs-4">
-							<input type="submit" value="Submit">
+							<ul class="buttons">
+								<li>
+									<input type="submit" value="Submit Email">
+								</li>
+							</ul>
 						</div>
 					</form>
 				</div>
