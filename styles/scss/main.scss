@@ -10,7 +10,12 @@
 /* NOTES
 /*******************************************/
 /*
-Command to watch sass files and compile to css
+CD to coffeeshop
+****************
+cd /Users/jyarbr5/Documents/Projects/coffeeshop
+
+Watch sass and compile to css
+*****************************
 sass --watch styles/scss/main.scss:styles/css/main.css
 */
 
@@ -28,13 +33,16 @@ body {
   color: $dark-purple;
   font-size: 1rem;
   line-height: 1.5rem;
-  font-family:'Bitter', Georgia, serif
+  font-family:'Bitter', Georgia, serif;
 }
 body, figure {
   margin: 0;
 }
-h1,h2,h3,h4,p {
+h1,h2,h3,p,ul {
   margin-top: 0;
+  margin-bottom: 2rem;
+}
+h1,h2,h3,h4 {
   letter-spacing: 0.05rem;
   line-height: normal;
 }
@@ -44,7 +52,7 @@ h5,h6 {
 * {
   box-sizing: border-box;
 }
-h1,h2 {
+h1,h2,h4 {
   font-family: 'Ubuntu', Helvetica, sans-serif;
 }
 ul {
@@ -54,33 +62,56 @@ ul {
     padding: 0 0.5rem;
   }
 }
-nav li {
-  padding: 0 0.5rem;
-}
 a {
   color: $orange;
-  :hover, :visited {
+  &:hover, &:active, &:visited {
     color: $orange;
   }
 }
 ul.buttons {
-  a, input[type=submit], input[type=email] input[type=button] {
+  li {
+    padding: 0;
+    margin: 0 0.4rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a, input[type=submit], input[type=email], button {
     text-shadow: none;
     text-decoration: none;
     color: $white;
     background-color: $orange;
     border-radius: 8px;
     box-shadow: 2px 3px 0 2px $dark-purple;
-    border: 0;
-    padding: 0.8rem 1rem;
-    font-family: 'Bitter';
+    border: 3px solid transparent;
+    padding: 0.8rem;
+    font-family: 'Ubuntu';
+    font-size: .9rem;
+    font-weight: bold;
     cursor: pointer;
-    &:hover {
+    &:hover, &:active {
       color: $white;
       background-color: $dark-purple;
       box-shadow: 2px 3px 0 2px $orange;
       i {
         color: $orange;
+      }
+    }
+    &.secondary {
+      background-color: transparent;
+      border: 3px solid #f69800;
+      color: #f69800; 
+      &:hover, &:active {
+        color: $white;
+        background-color: $dark-purple;
+        border: 3px solid transparent;
+        i {
+          color: $orange;
+        }
       }
     }
   }
@@ -90,17 +121,21 @@ ul.buttons {
 /* LAYOUT/SECTIONS
 /*******************************************/
 #main-nav {
-  position: fixed;
+  // position: fixed;
   color: $white; // make link hover $orange
   background-color: $dark-purple;
-  padding: 5px 0;
+  position: fixed;
+  height: 50px;
+  & section div {
+    height: 100%;
+  }
   .header-logo {
-    width: 203px;
-    height: 30px;
+    width: 255px;
+    height: 40px;
   }
   i {
-    font-size: 22px;
-    padding: 4px 0;
+    font-size: 28px;
+    padding: 11px 1rem;
   }
 }
 
@@ -113,7 +148,7 @@ header {
     0px 4px 5px rgba($dark-purple,0.5);
   background:
     linear-gradient(to bottom, rgba($dark-purple, 30%) 75%, rgba($dark-purple, 0%) 100%),
-    url("../../assets/img/bg/coffee-hero-bg.webp")
+    url("../../res/img/bg/coffee-hero-bg.webp")
     right top
     no-repeat
     $light-brown;
@@ -122,7 +157,6 @@ header {
     margin: 0;
   }
   p {
-    letter-spacing: 0.04rem;
     font-size: 1rem;
   }
   span {
@@ -151,16 +185,74 @@ main {
   figure {
       width: 100%;
   }
-  /* temporary - fix src img later */
   img {
     width: 100%;
     border-radius: 0.5rem;
   }
+  .about_copy {
+    height: 100%;
+  }
+}
+
+#menu-content {
+  ul {
+    margin-bottom: 3rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  figure {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  .item_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    height: 100%;
+    background-color: rgba($color: $dark-purple, $alpha: 0.7);
+    border-radius: 8px;
+    // visibility: hidden;
+  }
+  figcaption {
+    color: $white;
+    text-shadow: 0 0 5px $dark-purple;
+    ul, p {
+      margin: 0;
+    }
+    h4 {
+      font-size: 2rem;
+      margin: 0 0 1rem 0;
+    }
+    span {
+      font-style: italic;
+      color: $orange;
+    }
+  }
+}
+
+#test_content {
+  img {
+    height: 90px;
+    width: 90px;
+    border-radius: 5rem;
+  }
 }
 
 #contact-content {
+  .contact_card {
+    height: 7rem;
+    margin-bottom: 2rem;
+  }
+  form > div {
+    margin-bottom: 1rem;
+  }
   input[type=text], input[type=email] {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
   }
   label {
     font-weight: 600;
@@ -182,16 +274,13 @@ main {
       box-shadow: 2px 3px 0 2px $dark-purple;
     }
   }
-  li:first-child {
-    padding-left: 0;
-  }
-  & > div > div {
-    height: 7rem;
-  }
 }
 
 footer {
-
+  font-size: .75rem;
+  color: $white;
+  background-color: $dark-purple;
+  padding: 0.5rem 0;
 }
 
 /******************************************
@@ -211,4 +300,7 @@ footer {
 }
 .margin-bottom {
   margin-bottom: 1rem;
+}
+.hide {
+  visibility: hidden;
 }
