@@ -1038,7 +1038,7 @@ a:hover, a:active, a:visited {
 
 ul.buttons li {
   padding: 0;
-  margin: 0 0.4rem;
+  margin: 0 0.5rem 0 0;
 }
 ul.buttons li:first-child {
   margin-left: 0;
@@ -1056,7 +1056,7 @@ ul.buttons a, ul.buttons input[type=submit], ul.buttons input[type=email], ul.bu
   border: 3px solid transparent;
   padding: 0.8rem;
   font-family: "Ubuntu";
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -1086,10 +1086,17 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
 /* LAYOUT/SECTIONS
 /*******************************************/
 #main-nav {
-  color: #fff;
   background-color: #362f2f;
   position: fixed;
   height: 50px;
+  z-index: 10;
+}
+#main-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+#main-nav a:hover, #main-nav a:active {
+  color: #f69800;
 }
 #main-nav section div {
   height: 100%;
@@ -1105,14 +1112,25 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
 
 header {
   color: white;
+  text-align: center;
   height: 30rem;
   padding-top: 40px;
   text-shadow: 0px 2px 3px rgba(54, 47, 47, 0.7), 0px 4px 5px rgba(54, 47, 47, 0.5);
-  background: linear-gradient(to bottom, rgba(54, 47, 47, 0.3) 75%, rgba(54, 47, 47, 0) 100%), url("../../res/img/bg/coffee-hero-bg.webp") right top no-repeat #f4d6ba;
+  background: linear-gradient(to bottom, rgba(54, 47, 47, 0.25) 75%, rgba(54, 47, 47, 0) 100%), url("../../res/img/bg/coffee-hero-bg.webp") right top 20%/cover no-repeat #f4d6ba;
+}
+@media only screen and (min-width: 65rem) {
+  header {
+    text-align: left;
+  }
 }
 header h1 {
   font-size: 2.5rem;
   margin: 0;
+}
+@media only screen and (min-width: 41rem) {
+  header h1 {
+    font-size: 3rem;
+  }
 }
 header p {
   font-size: 1rem;
@@ -1121,14 +1139,19 @@ header span {
   color: #f69800;
 }
 header > section > * {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 main section {
-  padding-top: 3rem;
+  padding: 3rem 0;
 }
 main h2 {
   font-size: 2rem;
+}
+@media only screen and (min-width: 41rem) {
+  main h2 {
+    font-size: 2.5rem;
+  }
 }
 main h3 {
   color: #f69800;
@@ -1146,6 +1169,9 @@ main h3 {
   height: 100%;
 }
 
+#menu-content {
+  background: linear-gradient(to bottom right, rgba(244, 214, 186, 0.3), rgba(244, 214, 186, 0.1) 100%);
+}
 #menu-content ul {
   margin-bottom: 3rem;
 }
@@ -1168,18 +1194,18 @@ main h3 {
   background-color: rgba(54, 47, 47, 0.7);
   border-radius: 8px;
 }
-#menu-content figcaption {
+#menu-content figcaption, #menu-content p {
   color: #fff;
   text-shadow: 0 0 5px #362f2f;
 }
-#menu-content figcaption ul, #menu-content figcaption p {
+#menu-content figure ul, #menu-content figure p {
   margin: 0;
 }
-#menu-content figcaption h4 {
-  font-size: 2rem;
+#menu-content figure h4 {
+  font-size: 1.6rem;
   margin: 0 0 1rem 0;
 }
-#menu-content figcaption span {
+#menu-content figure span {
   font-style: italic;
   color: #f69800;
 }
@@ -1190,18 +1216,16 @@ main h3 {
   border-radius: 5rem;
 }
 
-#contact-content .contact_card {
-  height: 7rem;
-  margin-bottom: 2rem;
+#contact-content {
+  background: linear-gradient(to bottom right, rgba(244, 214, 186, 0.3), rgba(244, 214, 186, 0.1) 100%);
 }
-#contact-content form > div {
+#contact-content form .row {
   margin-bottom: 1rem;
 }
-#contact-content input[type=text], #contact-content input[type=email] {
-  padding: 0.5rem;
-}
 #contact-content label {
-  font-weight: 600;
+  font-weight: 400;
+  font-family: "Ubuntu", Helvetica, sans-serif;
+  font-size: 1.1rem;
 }
 #contact-content label:has(~ :is(textarea:focus, input:focus)) {
   color: #f69800;
@@ -1210,15 +1234,24 @@ main h3 {
   height: 10rem;
 }
 #contact-content input[type=text], #contact-content input[type=email], #contact-content textarea {
-  background-color: transparent;
+  font-size: 0.9rem;
+  font-family: "Bitter", Georgia, serif;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
-  border: 0;
-  outline: 2px solid #362f2f;
-  border-radius: 3px;
+  padding: 0.5rem;
+  border: 2px solid #362f2f;
+  border-radius: 4px;
+  outline: 0;
+  box-shadow: inset 0 0 1px 0 #362f2f;
+  box-shadow: 2px 3px 0 1px #f69800;
 }
 #contact-content input[type=text]:focus, #contact-content input[type=email]:focus, #contact-content textarea:focus {
-  outline: 2px solid #f69800;
-  box-shadow: 2px 3px 0 2px #362f2f;
+  color: #362f2f;
+  outline: 0;
+  box-shadow: 2px 3px 0 1px #362f2f;
+  background-color: #fff;
+  border-color: #f69800;
+  border: 2px solid #f69800;
 }
 
 footer {
@@ -1226,6 +1259,9 @@ footer {
   color: #fff;
   background-color: #362f2f;
   padding: 0.5rem 0;
+}
+footer .contact_card {
+  margin-bottom: 2rem;
 }
 
 /******************************************
