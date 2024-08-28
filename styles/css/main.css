@@ -1090,6 +1090,13 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
   position: fixed;
   height: 50px;
   z-index: 10;
+  color: #fff;
+}
+#main-nav li:first-child {
+  padding-left: 0;
+}
+#main-nav li:last-child {
+  padding-right: 0;
 }
 #main-nav a {
   color: #fff;
@@ -1255,13 +1262,16 @@ main h3 {
 }
 
 footer {
-  font-size: 0.75rem;
   color: #fff;
   background-color: #362f2f;
   padding: 0.5rem 0;
 }
 footer .contact_card {
   margin-bottom: 2rem;
+  padding: 0;
+}
+footer nav {
+  font-size: 0.75rem;
 }
 
 /******************************************
