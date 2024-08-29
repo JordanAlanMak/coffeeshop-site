@@ -1,5 +1,5 @@
 /******************************************
-/* IMPORTS
+/* Imports
 /*******************************************/
 @import "variables/grid-variables.scss";
 @import "mixins/main.scss";
@@ -7,8 +7,9 @@
 @import "visibility"; // Visibility last for precedence
 
 /******************************************
-/* NOTES
+/* Notes
 /*******************************************/
+
 /*
 CD to coffeeshop
 ****************
@@ -20,14 +21,19 @@ sass --watch styles/scss/main.scss:styles/css/main.css
 */
 
 /******************************************
-/* BASE STYLES
+/* Variables
 /*******************************************/
 $light-brown: #f4d6ba;
 $orange: #f69800;
 $orange-brown: #de9861;
 $dark-brown: #713928;
 $dark-purple: #362f2f;
+$yellow: #ffd300;
 $white: #fff;
+
+/******************************************
+/* Base Styles
+/*******************************************/
 body {
   color: $dark-purple;
   font-size: 1rem;
@@ -102,7 +108,7 @@ ul.buttons {
     &.secondary {
       background-color: transparent;
       border: 3px solid #f69800;
-      color: #f69800; 
+      color: #f69800;
       &:hover, &:active {
         color: $white;
         background-color: $dark-purple;
@@ -116,7 +122,7 @@ ul.buttons {
 }
 
 /******************************************
-/* LAYOUT/SECTIONS
+/* Layout/Sections
 /*******************************************/
 #main-nav {
   background-color: $dark-purple;
@@ -135,7 +141,6 @@ ul.buttons {
   a {
     color: $white;
     text-decoration: none;
-    // font-size: 0.9rem;
     &:hover, &:active {
       color: $orange;
     }
@@ -162,16 +167,16 @@ header {
   height: 30rem;
   padding-top: 40px;
   text-shadow:
-    0px 2px 3px rgba($dark-purple,0.7),
+    0px 1px 3px rgba($dark-purple,0.7),
     0px 4px 5px rgba($dark-purple,0.5);
   background:
     linear-gradient(
       to bottom,
-      rgba($dark-purple, 25%)75%,
+      rgba($dark-purple, 25%) 75%,
       rgba($dark-purple, 0%) 100%
     ),
     url("../../res/img/bg/coffee-hero-bg.webp")
-    right top 20% / cover
+    right 100px top 20% / cover
     no-repeat
     $light-brown;
   h1 {
@@ -194,7 +199,7 @@ header {
 
 main {
   section {
-    padding: 3rem 0;
+    padding: 5rem 0;
   }
   h2 {
     font-size: 2rem;
@@ -210,8 +215,14 @@ main {
 }
 
 #about-content {
-  figure {
-      width: 100%;
+  aside {
+    float: left;
+    margin-left: auto;
+    margin-right: 1rem;
+    width: 100%;
+    @media #{$breakpoint-sm-up} {
+      width: 300px;
+    }
   }
   img {
     width: 100%;
@@ -245,7 +256,6 @@ main {
     height: 100%;
     background-color: rgba($color: $dark-purple, $alpha: 0.7);
     border-radius: 8px;
-    // visibility: hidden;
   }
   figcaption, p {
     color: $white;
@@ -267,10 +277,16 @@ main {
 }
 
 #test_content {
+  blockquote {
+    margin: 0;
+  }
   img {
     height: 90px;
     width: 90px;
     border-radius: 5rem;
+  }
+  i {
+    color: $yellow;
   }
 }
 
@@ -331,7 +347,7 @@ footer {
 }
 
 /******************************************
-/* ADDITIONAL STYLES
+/* Utilities
 /*******************************************/
 .text-left {
   text-align: left;
@@ -351,3 +367,18 @@ footer {
 .hide {
   visibility: hidden;
 }
+
+/******************************************
+/* JS Styles
+/*******************************************/
+.to-fade-in {
+  transform: translateY(5rem) perspective(5rem) translateZ(-1rem);
+  transition:
+    transform 0.4s ease-in-out,
+    opacity 0.4s ease-in-out;
+}
+.fade-in {
+  transform: translateZ(0);
+  opacity: 1;
+}
+

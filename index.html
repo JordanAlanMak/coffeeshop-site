@@ -22,14 +22,14 @@
 	</head>
 	<body>
 
-		<!-- MAIN NAV -->
-		<nav id="main-nav" class="row">
-			<section class="col-xs-10 col-md-4 col-md-offset-2">
+		<!-- Main Nav -->
+		<nav id="main-nav" class="row between-xs">
+			<section class="col-xs-10 col-md-4">
 				<div class="row middle-xs start-xs">
 					<img class="header-logo" src="res/img/logo/coffeeshop-logo.webp" alt="The Coffee Spot logo">
 				</div>
 			</section>
-			<section class="col-md-5 hide-xs show-md">
+			<section class="col-md-4 hide-xs show-md">
 				<div class="row middle-xs end-xs">
 					<ul class="row end-md">
 						<li><a href="#">Home</a></li>
@@ -47,9 +47,9 @@
 			</section>
 		</nav>
 
-		<!-- HEADER -->
+		<!-- Header -->
 		<header id="hero-content" class="row">
-			<!-- HERO -->
+			<!-- Hero -->
 			<section class="row natural-height align-center center-xs start-md">
 				<div class="col-xs-12 col-md-offset-2">
 					<h1><span>Welcome to</span><br class=""> The Coffee Spot</h1>
@@ -66,34 +66,40 @@
 			</section>
 		</header>
 
-		<!-- MAIN BODY -->
+		<!-- Main Body -->
 		<main id="main-content">
 
-			<!-- ABOUT US -->
+			<!-- About -->
+			<!--
+				TODO
+				[ ] float image to left
+			-->
 			<section id="about-content" class="row center-xs">
 				<div class="col-xs-12 text-center">
 					<h3>About</h3>
 					<h2>Our Journey</h2>
 				</div>
-				<figure class="col-xs-10 col-sm-5 col-md-3">
-					<img src="res/img/about/coffee-pouring_400.webp" alt="guy pouring coffee">
-				</figure>
-				<div class="col-xs-10 col-sm-6 col-md-4">
-					<div class="row flex-column center-xs about_copy">
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex iusto officia animi sint veritatis aperiam eos, fugit nulla aspernatur quos, at, nobis inventore quas deleniti voluptatem nostrum aliquam autem iure.</p>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
-					</div>
+				<div class="col-xs-12 col-sm-8 col-md-6">
+					<aside class="">
+						<img src="res/img/about/coffee-pouring_400.webp" alt="guy pouring coffee">
+					</aside>
+					<!-- <div class="row flex-column center-xs about_copy"> -->
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex iusto officia animi sint veritatis aperiam eos, fugit nulla aspernatur quos, at, nobis inventore quas deleniti voluptatem nostrum aliquam autem iure.</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
+					<!-- </div> -->
 				</div>
 			</section>
 
-			<!-- MENU -->
+			<!-- Menu -->
 			<section id="menu-content" class="row center-xs">
 				<div class="col-xs-12 text-center">
 					<h3>Menu</h3>
 					<h2>Find a Favorite</h2>
 				</div>
 
-				<!-- TABS -->
+				<!-- Buttons -->
 				<div class="row">
 					<ul class="buttons row center-xs">
 						<li><button>Drinks</button></li>
@@ -103,7 +109,7 @@
 					</ul>
 				</div>
 
-				<!-- ITEMS -->
+				<!-- Items -->
 				<div class="row center-xs text-center">
 					<figure class="col-xs-5 col-sm-3 col-md-2">
 						<img src="res/img/menu/drinks_latte.webp" alt="latte">
@@ -164,14 +170,14 @@
 				</div>
 			</section>
 
-			<!-- TESTIMONIALS -->
+			<!-- Testimonials -->
 			<section id="test_content" class="row">
 				<div class="col-xs-12 text-center">
 					<h3>Reviews</h3>
 					<h2>What People are Saying</h2>
 				</div>
 				 <div class="row center-xs text-center">
-					<figure class="col-sm-9 col-md-6">
+					<figure class="col-sm-8 col-md-4 col-lg-3">
 						<img src="res/img/testimonial/test_hs_1.webp" alt="charles smiling">
 						<figcaption>
 							<cite>Jackson Schaal</cite>
@@ -187,7 +193,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
 						</blockquote>
 					</figure>
-					<figure class="col-sm-9 col-md-6">
+					<figure class="col-sm-8 col-md-4 col-lg-3">
 						<img src="res/img/testimonial/test_hs_2.webp" alt="charles smiling">
 						<figcaption>
 							<cite>Alex Starnes</cite>
@@ -203,10 +209,26 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
 						</blockquote>
 					</figure>
+					<figure class="col-sm-8 col-md-4 col-lg-3">
+						<img src="res/img/testimonial/test_hs_3.webp" alt="charles smiling">
+						<figcaption>
+							<cite>Marcus Brown</cite>
+						</figcaption>
+						<div>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
+						</blockquote>
+					</figure>
 				 </div>
 			</section>
 
-			<!-- CONTACT -->
+			<!-- Contact -->
 			<section id="contact-content" class="row text-center">
 				<div class="row flex-column">
 					<h3>Contact</h3>
@@ -242,7 +264,7 @@
 			</section>
 		</main>
 
-		<!-- FOOTER -->
+		<!-- Footer -->
 		<footer id="footer-content">
 			<div class="row center-xs text-center">
 

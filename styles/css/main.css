@@ -1,5 +1,5 @@
 /******************************************
-/* IMPORTS
+/* Imports
 /*******************************************/
 .row {
   box-sizing: border-box;
@@ -974,7 +974,7 @@
   }
 }
 /******************************************
-/* NOTES
+/* Notes
 /*******************************************/
 /*
 CD to coffeeshop
@@ -986,7 +986,10 @@ Watch sass and compile to css
 sass --watch styles/scss/main.scss:styles/css/main.css
 */
 /******************************************
-/* BASE STYLES
+/* Variables
+/*******************************************/
+/******************************************
+/* Base Styles
 /*******************************************/
 body {
   color: #362f2f;
@@ -1083,7 +1086,7 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
 }
 
 /******************************************
-/* LAYOUT/SECTIONS
+/* Layout/Sections
 /*******************************************/
 #main-nav {
   background-color: #362f2f;
@@ -1122,8 +1125,8 @@ header {
   text-align: center;
   height: 30rem;
   padding-top: 40px;
-  text-shadow: 0px 2px 3px rgba(54, 47, 47, 0.7), 0px 4px 5px rgba(54, 47, 47, 0.5);
-  background: linear-gradient(to bottom, rgba(54, 47, 47, 0.25) 75%, rgba(54, 47, 47, 0) 100%), url("../../res/img/bg/coffee-hero-bg.webp") right top 20%/cover no-repeat #f4d6ba;
+  text-shadow: 0px 1px 3px rgba(54, 47, 47, 0.7), 0px 4px 5px rgba(54, 47, 47, 0.5);
+  background: linear-gradient(to bottom, rgba(54, 47, 47, 0.25) 75%, rgba(54, 47, 47, 0) 100%), url("../../res/img/bg/coffee-hero-bg.webp") right 100px top 20%/cover no-repeat #f4d6ba;
 }
 @media only screen and (min-width: 65rem) {
   header {
@@ -1150,7 +1153,7 @@ header > section > * {
 }
 
 main section {
-  padding: 3rem 0;
+  padding: 5rem 0;
 }
 main h2 {
   font-size: 2rem;
@@ -1165,8 +1168,16 @@ main h3 {
   margin-bottom: 0;
 }
 
-#about-content figure {
+#about-content aside {
+  float: left;
+  margin-left: auto;
+  margin-right: 1rem;
   width: 100%;
+}
+@media only screen and (min-width: 41rem) {
+  #about-content aside {
+    width: 300px;
+  }
 }
 #about-content img {
   width: 100%;
@@ -1217,10 +1228,16 @@ main h3 {
   color: #f69800;
 }
 
+#test_content blockquote {
+  margin: 0;
+}
 #test_content img {
   height: 90px;
   width: 90px;
   border-radius: 5rem;
+}
+#test_content i {
+  color: #ffd300;
 }
 
 #contact-content {
@@ -1275,7 +1292,7 @@ footer nav {
 }
 
 /******************************************
-/* ADDITIONAL STYLES
+/* Utilities
 /*******************************************/
 .text-left {
   text-align: left;
@@ -1299,6 +1316,19 @@ footer nav {
 
 .hide {
   visibility: hidden;
+}
+
+/******************************************
+/* JS Styles
+/*******************************************/
+.to-fade-in {
+  transform: translateY(5rem) perspective(5rem) translateZ(-1rem);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.fade-in {
+  transform: translateZ(0);
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
