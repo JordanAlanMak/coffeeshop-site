@@ -1126,7 +1126,7 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
 header {
   color: white;
   text-align: center;
-  height: 30rem;
+  height: 35rem;
   padding-top: 40px;
   text-shadow: 0px 1px 3px rgba(54, 47, 47, 0.7), 0px 4px 5px rgba(54, 47, 47, 0.5);
   background: linear-gradient(to bottom, rgba(54, 47, 47, 0.25) 75%, rgba(54, 47, 47, 0) 100%), url("../../res/img/bg/coffee-hero-bg.webp") right 100px top 20%/cover no-repeat #f4d6ba;
@@ -1263,6 +1263,10 @@ main h3 {
 #contact-content {
   background: linear-gradient(to bottom right, rgba(244, 214, 186, 0.3), rgba(244, 214, 186, 0.1) 100%);
 }
+#contact-content .contact_card {
+  margin-bottom: 5rem;
+  padding: 0;
+}
 #contact-content form .row {
   margin-bottom: 1rem;
 }
@@ -1302,10 +1306,6 @@ footer {
   color: #fff;
   background-color: #362f2f;
   padding: 0.5rem 0;
-}
-footer .contact_card {
-  margin-bottom: 2rem;
-  padding: 0;
 }
 footer nav {
   font-size: 0.75rem;
@@ -1347,12 +1347,13 @@ footer nav {
 /* JS Styles
 /*******************************************/
 .to-fade-in {
-  transform: translateY(5rem) perspective(5rem) translateZ(-1rem);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transform: translateY(1rem) perspective(5rem) translateZ(-1rem);
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  opacity: 0;
 }
 
 .fade-in {
-  transform: translateZ(0);
+  transform: translateY(0) translateZ(0);
   opacity: 1;
 }
 
