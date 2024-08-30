@@ -1050,17 +1050,17 @@ ul.buttons li:last-child {
   margin-right: 0;
 }
 ul.buttons a, ul.buttons input[type=submit], ul.buttons input[type=email], ul.buttons button {
-  text-shadow: none;
+  font-family: "Ubuntu";
+  font-size: 1rem;
+  font-weight: bold;
   text-decoration: none;
+  text-shadow: none;
   color: #fff;
   background-color: #f69800;
   border-radius: 8px;
   box-shadow: 2px 3px 0 2px #362f2f;
   border: 3px solid transparent;
   padding: 0.8rem;
-  font-family: "Ubuntu";
-  font-size: 1rem;
-  font-weight: bold;
   cursor: pointer;
 }
 ul.buttons a:hover, ul.buttons a:active, ul.buttons input[type=submit]:hover, ul.buttons input[type=submit]:active, ul.buttons input[type=email]:hover, ul.buttons input[type=email]:active, ul.buttons button:hover, ul.buttons button:active {
@@ -1103,10 +1103,13 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
 }
 #main-nav a {
   color: #fff;
+  font-weight: bold;
   text-decoration: none;
+  border-bottom: 1px dashed transparent;
 }
 #main-nav a:hover, #main-nav a:active {
   color: #f69800;
+  border-bottom-color: #fff;
 }
 #main-nav section div {
   height: 100%;
@@ -1180,7 +1183,7 @@ main h3 {
   }
 }
 #about-content img {
-  width: 100%;
+  max-width: 100%;
   border-radius: 0.5rem;
 }
 #about-content .about_copy {
@@ -1202,6 +1205,11 @@ main h3 {
   position: relative;
   margin-bottom: 2rem;
 }
+@media only screen and (max-width: 40rem) {
+  #menu-content figure {
+    padding: 0 0.25rem;
+  }
+}
 #menu-content .item_overlay {
   position: absolute;
   top: 0;
@@ -1212,6 +1220,12 @@ main h3 {
   background-color: rgba(54, 47, 47, 0.7);
   border-radius: 8px;
 }
+@media only screen and (max-width: 40rem) {
+  #menu-content .item_overlay {
+    width: calc(100% - 0.5rem);
+    margin-left: 0.25rem;
+  }
+}
 #menu-content figcaption, #menu-content p {
   color: #fff;
   text-shadow: 0 0 5px #362f2f;
@@ -1220,8 +1234,14 @@ main h3 {
   margin: 0;
 }
 #menu-content figure h4 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  width: 90%;
   margin: 0 0 1rem 0;
+}
+@media only screen and (min-width: 41rem) {
+  #menu-content figure h4 {
+    font-size: 1.8rem;
+  }
 }
 #menu-content figure span {
   font-style: italic;
@@ -1316,6 +1336,11 @@ footer nav {
 
 .hide {
   visibility: hidden;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
 }
 
 /******************************************

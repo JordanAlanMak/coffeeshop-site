@@ -25,7 +25,6 @@ sass --watch styles/scss/main.scss:styles/css/main.css
 /*******************************************/
 $light-brown: #f4d6ba;
 $orange: #f69800;
-$orange-brown: #de9861;
 $dark-brown: #713928;
 $dark-purple: #362f2f;
 $yellow: #ffd300;
@@ -85,17 +84,17 @@ ul.buttons {
     }
   }
   a, input[type=submit], input[type=email], button {
-    text-shadow: none;
+    font-family: 'Ubuntu';
+    font-size: 1rem;
+    font-weight: bold;
     text-decoration: none;
+    text-shadow: none;
     color: $white;
     background-color: $orange;
     border-radius: 8px;
     box-shadow: 2px 3px 0 2px $dark-purple;
     border: 3px solid transparent;
     padding: 0.8rem;
-    font-family: 'Ubuntu';
-    font-size: 1rem;
-    font-weight: bold;
     cursor: pointer;
     &:hover, &:active {
       color: $white;
@@ -140,9 +139,12 @@ ul.buttons {
   }
   a {
     color: $white;
+    font-weight: bold;
     text-decoration: none;
+    border-bottom: 1px dashed transparent;
     &:hover, &:active {
       color: $orange;
+      border-bottom-color: $white;
     }
   }
   & section div {
@@ -225,7 +227,7 @@ main {
     }
   }
   img {
-    width: 100%;
+    max-width: 100%;
     border-radius: 0.5rem;
   }
   .about_copy {
@@ -246,6 +248,9 @@ main {
   figure {
     position: relative;
     margin-bottom: 2rem;
+    @media #{$breakpoint-xs-only} {
+      padding:0 0.25rem;
+    }
   }
   .item_overlay {
     position: absolute;
@@ -256,6 +261,10 @@ main {
     height: 100%;
     background-color: rgba($color: $dark-purple, $alpha: 0.7);
     border-radius: 8px;
+    @media #{$breakpoint-xs-only} {
+      width: calc(100% - .5rem);
+      margin-left: 0.25rem;
+    }
   }
   figcaption, p {
     color: $white;
@@ -266,8 +275,12 @@ main {
       margin: 0;
     }
     h4 {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
+      width: 90%;
       margin: 0 0 1rem 0;
+      @media #{$breakpoint-sm-up} {
+        font-size: 1.8rem;
+      }
     }
     span {
       font-style: italic;
@@ -366,6 +379,10 @@ footer {
 }
 .hide {
   visibility: hidden;
+}
+.break {
+  flex-basis: 100%;
+  height: 0;
 }
 
 /******************************************

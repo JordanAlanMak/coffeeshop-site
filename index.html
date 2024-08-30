@@ -24,12 +24,12 @@
 
 		<!-- Main Nav -->
 		<nav id="main-nav" class="row between-xs">
-			<section class="col-xs-10 col-md-4">
+			<section class="col-xs-10 col-md-6">
 				<div class="row middle-xs start-xs">
 					<img class="header-logo" src="res/img/logo/coffeeshop-logo.webp" alt="The Coffee Spot logo">
 				</div>
 			</section>
-			<section class="col-md-4 hide-xs show-md">
+			<section class="col-md-6 hide-xs show-md">
 				<div class="row middle-xs end-xs">
 					<ul class="row end-md">
 						<li><a href="#">Home</a></li>
@@ -70,17 +70,13 @@
 		<main id="main-content">
 
 			<!-- About -->
-			<!--
-				TODO
-				[ ] float image to left
-			-->
 			<section id="about-content" class="row center-xs">
 				<div class="col-xs-12 text-center">
 					<h3>About</h3>
 					<h2>Our Journey</h2>
 				</div>
-				<div class="col-xs-12 col-sm-8 col-md-6">
-					<aside class="">
+				<div class="col-xs-12 col-sm-10 col-md-8">
+					<aside class="row center-xs">
 						<img src="res/img/about/coffee-pouring_400.webp" alt="guy pouring coffee">
 					</aside>
 					<!-- <div class="row flex-column center-xs about_copy"> -->
@@ -100,6 +96,11 @@
 				</div>
 
 				<!-- Buttons -->
+				 <!-------------
+				 TODO
+				 - [ ] refactor css to be reused between main nav and these buttons
+				 - [ ] remove secondary class and add "active" class instead
+				 -------------->
 				<div class="row">
 					<ul class="buttons row center-xs">
 						<li><button>Drinks</button></li>
@@ -111,11 +112,11 @@
 
 				<!-- Items -->
 				<div class="row center-xs text-center">
-					<figure class="col-xs-5 col-sm-3 col-md-2">
+					<figure class="col-xs-4 col-md-2">
 						<img src="res/img/menu/drinks_latte.webp" alt="latte">
 						<div class="row flex-column center-xs item_overlay">
 							<p><span>$6.99</span></p>
-							<figcaption class="row flex-column center-xs">
+							<figcaption class="row flex-column center-xs middle-xs">
 								<h4>Hazelnut Latte</h4>
 							</figcaption>
 							<ul class="buttons">
@@ -125,10 +126,10 @@
 							</ul>
 						</div>
 					</figure>
-					<figure class="col-xs-5 col-sm-3 col-md-2">
+					<figure class="col-xs-4 col-md-2">
 						<img src="res/img/menu/drinks_matcha.webp" alt="matcha">
 						<div class="row flex-column center-xs item_overlay hide">
-							<figcaption class="row flex-column center-xs">
+							<figcaption class="row flex-column center-xs middle-xs">
 								<p><span>$6.99</span></p>
 								<h4>Matcha Latte</h4>
 							</figcaption>
@@ -139,11 +140,12 @@
 							</ul>
 						</div>
 					</figure>
-					<figure class="col-xs-5 col-sm-3 col-md-2">
+					<div class="break hide-md"></div>
+					<figure class="col-xs-4 col-md-2">
 						<img src="res/img/menu/drinks_frappe.webp" alt="latte">
 						<div class="row flex-column center-xs item_overlay hide">
 							<p><span>$6.99</span></p>
-							<figcaption class="row flex-column center-xs">
+							<figcaption class="row flex-column center-xs middle-xs">
 								<h4>Caramel Frappe</h4>
 							</figcaption>
 							<ul class="buttons">
@@ -153,10 +155,10 @@
 							</ul>
 						</div>
 					</figure>
-					<figure class="col-xs-5 col-sm-3 col-md-2">
+					<figure class="col-xs-4 col-md-2">
 						<img src="res/img/menu/drinks_iced_coffee.webp" alt="matcha">
 						<div class="row flex-column center-xs item_overlay hide">
-							<figcaption class="row flex-column center-xs">
+							<figcaption class="row flex-column center-xs middle-xs">
 								<p><span>$6.99</span></p>
 								<h4>Iced Coffee</h4>
 							</figcaption>
