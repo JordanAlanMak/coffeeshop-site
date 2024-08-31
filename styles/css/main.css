@@ -1362,4 +1362,11 @@ footer nav {
   opacity: 1;
 }
 
+@media (prefers-reduced-motion) {
+  .to-fade-in {
+    opacity: 1;
+    transform: none !important;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

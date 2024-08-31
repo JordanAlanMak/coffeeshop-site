@@ -403,4 +403,9 @@ footer {
   transform: translateY(0) translateZ(0);
   opacity: 1;
 }
-
+@media (prefers-reduced-motion) {
+  .to-fade-in {
+    opacity: 1;
+    transform: none !important;
+  }
+}
