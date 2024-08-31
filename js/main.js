@@ -1,21 +1,34 @@
+/*******************
+Display on scroll
+*******************/
 const scrollOffset = 100
-const scrollEls = document.querySelectorAll('.to-fade-in')
+const scrollElements = Array.from(document.querySelectorAll('.to-fade-in'))
 
-const elementInView = (el, offset = 0) => {
-    // get space between element and top of viewport
-    const elTop = el.getBoundingClientRect().top
-    // return true if element top - scrollOffset is in view
-    return elTop <= (window.innerHeight - offset)
-}
+const displayElementsInView = () => {
+    // Check if all elements have been scrolled
+    if(scrollElements === undefined || scrollElements.length === 0) return
 
-const handleScroll = () => {
-    scrollEls.forEach(item => {
-        if (elementInView(item, scrollOffset)) {
+    scrollElements.forEach(item => {
+        const elTop = item.getBoundingClientRect().top
+        
+        if (elTop <= window.innerHeight - scrollOffset) {
             item.classList.add('fade-in')
         }
     })
 }
 
-window.addEventListener('scroll', () => {
-    handleScroll()
-})
+['scroll', 'load'].forEach(event => {
+    const timeout = 250
+    let preventDisplay = false
+
+    window.addEventListener(event, () => {
+        if (preventDisplay) {
+            return
+        }
+        preventDisplay = true
+        setTimeout(() => {
+            displayElementsInView()
+            preventDisplay = false
+        }, timeout)
+    })
+});

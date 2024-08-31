@@ -18,7 +18,7 @@ cd /Users/jyarbr5/Documents/Projects/coffeeshop
 Watch sass and compile to css
 *****************************
 sass --watch styles/scss/main.scss:styles/css/main.css
-*/
+/*
 
 /******************************************
 /* Variables
@@ -83,6 +83,9 @@ ul.buttons {
       margin-right: 0;
     }
   }
+  a {
+    display: block;
+  }
   a, input[type=submit], input[type=email], button {
     font-family: 'Ubuntu';
     font-size: 1rem;
@@ -94,7 +97,7 @@ ul.buttons {
     border-radius: 8px;
     box-shadow: 2px 3px 0 2px $dark-purple;
     border: 3px solid transparent;
-    padding: 0.8rem;
+    padding: 0.5rem 0.8rem;
     cursor: pointer;
     &:hover, &:active {
       color: $white;
@@ -183,18 +186,19 @@ header {
     $light-brown;
   h1 {
     font-size: 2.5rem;
+    margin: 0;
     @media #{$breakpoint-sm-up} {
       font-size: 3rem;
     }
-    margin: 0;
   }
   p {
     font-size: 1rem;
+    margin: 1rem 0;
   }
   span {
     color:$orange;
   }
-  & > section > * {
+  & > section > div {
     margin-bottom: 1rem;
   }
 }
@@ -389,10 +393,10 @@ footer {
 /* JS Styles
 /*******************************************/
 .to-fade-in {
-  transform: translateY(1rem) perspective(5rem) translateZ(-1rem);
+  transform: translateY(1rem) perspective(10rem) translateZ(-1rem);
   transition:
-    transform 0.4s ease-out,
-    opacity 0.4s ease-out;
+    transform 0.3s ease-out,
+    opacity 0.3s ease-out;
   opacity: 0;
 }
 .fade-in {
