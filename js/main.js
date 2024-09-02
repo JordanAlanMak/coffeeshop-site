@@ -1,34 +1,55 @@
-/*******************
-Display on scroll
-*******************/
-const scrollOffset = 100
+/*Handle Element Fade In
+***********************/
 const scrollElements = Array.from(document.querySelectorAll('.to-fade-in'))
+const scrollOffset = 5
 
-const displayElementsInView = () => {
-    // Check if all elements have been scrolled
-    if(scrollElements === undefined || scrollElements.length === 0) return
-
+const handleElementFadeIn = () => {
+    // Check if elements exist
     scrollElements.forEach(item => {
         const elTop = item.getBoundingClientRect().top
         
-        if (elTop <= window.innerHeight - scrollOffset) {
+        if (elTop <= window.innerHeight - (window.innerHeight * (scrollOffset/100))) {
             item.classList.add('fade-in')
         }
     })
 }
 
-['scroll', 'load'].forEach(event => {
-    const timeout = 250
-    let preventDisplay = false
+/* Handle Scrolling Nav
+**********************/
+const nav = document.querySelector('#main-nav')
+let prevScrollY = 0
+
+const handleNavScroll = (e) => {
+    let curScrollY = window.scrollY || window.pageYOffset
+    
+    // document.activeElement used for accessibility if nav item is currently focused
+    if (curScrollY > prevScrollY && !nav.contains(document.activeElement)) {
+        nav.classList.add('nav-hidden')
+        nav.classList.remove('nav-visible')
+    } else {
+        nav.classList.add('nav-visible')
+        nav.classList.remove('nav-hidden')
+    }
+    prevScrollY = curScrollY
+};
+
+/* IIFE: Create event handlers that call scrolling functions
+***********************************************************/
+['scroll', 'scrollend', 'load'].forEach(event => {
+    const timeout = 300
+    let throttleEvent = false
 
     window.addEventListener(event, () => {
-        if (preventDisplay) {
-            return
+        if (throttleEvent) return
+        throttleEvent = true
+        
+        handleElementFadeIn()
+        if (event === 'scroll' || (event === 'scrollend' && nav.classList.contains('nav-hidden'))) {
+            handleNavScroll(event)
         }
-        preventDisplay = true
         setTimeout(() => {
-            displayElementsInView()
-            preventDisplay = false
+            throttleEvent = false
         }, timeout)
+        console.log('finished running')
     })
 });

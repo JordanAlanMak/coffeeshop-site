@@ -23,12 +23,20 @@ sass --watch styles/scss/main.scss:styles/css/main.css
 /******************************************
 /* Variables
 /*******************************************/
-$light-brown: #f4d6ba;
-$orange: #f69800;
-$dark-brown: #713928;
-$dark-purple: #362f2f;
+
+// colors
+// $light-brown: #FFF3CD;
+// $orange: #FF926B;
+// $dark-purple: #4D3E3E;
 $yellow: #ffd300;
 $white: #fff;
+
+$orange: #FF8426;
+$light-orange: #FFC38B;
+$light-brown: #F2EEE3;
+$dark-purple: #785E4D;
+
+$main-nav-height: 50px;
 
 /******************************************
 /* Base Styles
@@ -109,8 +117,8 @@ ul.buttons {
     }
     &.secondary {
       background-color: transparent;
-      border: 3px solid #f69800;
-      color: #f69800;
+      border: 3px solid $orange;
+      color: $orange;
       &:hover, &:active {
         color: $white;
         background-color: $dark-purple;
@@ -126,12 +134,34 @@ ul.buttons {
 /******************************************
 /* Layout/Sections
 /*******************************************/
+#side-nav {
+
+}
 #main-nav {
   background-color: $dark-purple;
   position: fixed;
-  height: 50px;
+  top: 0;
+  height: $main-nav-height;
   z-index: 10;
   color: $white;
+  transition: top 400ms ease-in-out;
+  &.nav-visible, &:focus-within {
+    top: 0;
+  }
+  &.nav-hidden {
+    top: calc(-1 * $main-nav-height);
+  }
+  .header-logo {
+    width: 255px;
+    height: 40px;
+  }
+  i {
+    font-size: 28px;
+    padding: 11px 1rem;
+    &:hover, &:active {
+      color: $orange;
+    }
+  }
   li {
     &:first-child {
       padding-left: 0;
@@ -144,7 +174,7 @@ ul.buttons {
     color: $white;
     font-weight: bold;
     text-decoration: none;
-    border-bottom: 1px dashed transparent;
+    border-bottom: 2px dashed transparent;
     &:hover, &:active {
       color: $orange;
       border-bottom-color: $white;
@@ -153,37 +183,36 @@ ul.buttons {
   & section div {
     height: 100%;
   }
-  .header-logo {
-    width: 255px;
-    height: 40px;
-  }
-  i {
-    font-size: 28px;
-    padding: 11px 1rem;
-  }
 }
 
 header {
   color: white;
   text-align: center;
-  @media #{$breakpoint-md-up} {
-    text-align: left;
-  }
   height: 35rem;
   padding-top: 40px;
+  background-color: $light-brown;
   text-shadow:
-    0px 1px 3px rgba($dark-purple,0.7),
+    0px 1px 3px rgba($dark-purple,0.8),
     0px 4px 5px rgba($dark-purple,0.5);
   background:
     linear-gradient(
-      to bottom,
-      rgba($dark-purple, 25%) 75%,
-      rgba($dark-purple, 0%) 100%
-    ),
-    url("../../res/img/bg/coffee-hero-bg.webp")
-    right 100px top 20% / cover
-    no-repeat
-    $light-brown;
+      to bottom right,
+      rgba($light-brown, 50%),
+      rgba($light-orange, 50%) 100%
+    );
+  // background:
+  //   linear-gradient(
+  //     to bottom,
+  //     rgba($dark-purple, 25%) 75%,
+  //     rgba($dark-purple, 0%) 100%
+  //   ),
+  //   url("../../res/img/bg/coffee-hero-bg.webp")
+  //   right 0 top 20% / cover
+  //   no-repeat
+  //   $light-brown;
+  @media #{$breakpoint-md-up} {
+    text-align: left;
+  }
   h1 {
     font-size: 2.5rem;
     margin: 0;
@@ -221,6 +250,12 @@ main {
 }
 
 #about-content {
+  background:
+  linear-gradient(
+    to bottom,
+    rgba($white, 100%) 90%,
+    rgba($light-brown, 100%)
+  );
   aside {
     float: left;
     margin-left: auto;
@@ -240,7 +275,12 @@ main {
 }
 
 #menu-content {
-  background: linear-gradient(to bottom right, rgba($light-brown, 30%), rgba($light-brown, 10%) 100%);
+  background:
+    linear-gradient(
+      to bottom right,
+      rgba($light-brown, 50%),
+      rgba($light-orange, 50%) 100%
+    );
   ul {
     margin-bottom: 3rem;
   }
@@ -294,6 +334,12 @@ main {
 }
 
 #test_content {
+  background:
+  linear-gradient(
+    to bottom,
+    rgba($white, 100%) 90%,
+    rgba($light-brown, 100%)
+  );
   blockquote {
     margin: 0;
   }
@@ -311,8 +357,8 @@ main {
   background:
     linear-gradient(
       to bottom right,
-      rgba($light-brown, 30%),
-      rgba($light-brown, 10%) 100%
+      rgba($light-brown, 50%),
+      rgba($light-orange, 50%) 100%
     );
   .contact_card {
     margin-bottom: 5rem;
@@ -355,12 +401,12 @@ main {
 }
 
 footer {
-  nav {
-    font-size: .75rem;
-  }
   color: $white;
   background-color: $dark-purple;
   padding: 0.5rem 0;
+  nav {
+    font-size: .75rem;
+  }
 }
 
 /******************************************
@@ -395,8 +441,8 @@ footer {
 .to-fade-in {
   transform: translateY(1rem) perspective(10rem) translateZ(-1rem);
   transition:
-    transform 0.3s ease-out,
-    opacity 0.3s ease-out;
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
   opacity: 0;
 }
 .fade-in {
