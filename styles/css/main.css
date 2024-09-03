@@ -986,6 +986,10 @@ Watch sass and compile to css
 sass --watch styles/scss/main.scss:styles/css/main.css
 /*
 
+Color Palette
+*****************************
+https://colorhunt.co/palette/f2eee3baaf92785e4dff8426
+
 /******************************************
 /* Variables
 /*******************************************/
@@ -993,10 +997,11 @@ sass --watch styles/scss/main.scss:styles/css/main.css
 /* Base Styles
 /*******************************************/
 body {
-  color: #785E4D;
+  color: #3a2d25;
   font-size: 1rem;
   line-height: 1.5rem;
   font-family: "Bitter", Georgia, serif;
+  position: absolute;
 }
 
 body, figure {
@@ -1062,14 +1067,14 @@ ul.buttons a, ul.buttons input[type=submit], ul.buttons input[type=email], ul.bu
   color: #fff;
   background-color: #FF8426;
   border-radius: 8px;
-  box-shadow: 2px 3px 0 2px #785E4D;
+  box-shadow: 2px 3px 0 2px #3a2d25;
   border: 3px solid transparent;
   padding: 0.5rem 0.8rem;
   cursor: pointer;
 }
 ul.buttons a:hover, ul.buttons a:active, ul.buttons input[type=submit]:hover, ul.buttons input[type=submit]:active, ul.buttons input[type=email]:hover, ul.buttons input[type=email]:active, ul.buttons button:hover, ul.buttons button:active {
   color: #fff;
-  background-color: #785E4D;
+  background-color: #3a2d25;
   box-shadow: 2px 3px 0 2px #FF8426;
 }
 ul.buttons a:hover i, ul.buttons a:active i, ul.buttons input[type=submit]:hover i, ul.buttons input[type=submit]:active i, ul.buttons input[type=email]:hover i, ul.buttons input[type=email]:active i, ul.buttons button:hover i, ul.buttons button:active i {
@@ -1092,12 +1097,42 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
 /******************************************
 /* Layout/Sections
 /*******************************************/
+body.side-nav-open {
+  overflow: hidden;
+}
+
+#side-nav {
+  background-color: rgba(58, 45, 37, 0.95);
+  position: fixed;
+  padding-top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+#side-nav li {
+  border-bottom: 1px solid #BAAF92;
+}
+#side-nav a {
+  width: 100%;
+  padding: 1rem 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 30;
+}
+#side-nav a:hover, #side-nav a:active {
+  color: #FF8426;
+  border-bottom-color: #fff;
+}
+
 #main-nav {
-  background-color: #785E4D;
+  box-shadow: 0 2px 3px 0px black;
+  background-color: #3a2d25;
   position: fixed;
   top: 0;
   height: 50px;
-  z-index: 10;
+  z-index: 20;
   color: #fff;
   transition: top 400ms ease-in-out;
 }
@@ -1105,7 +1140,7 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
   top: 0;
 }
 #main-nav.nav-hidden {
-  top: -50px;
+  top: -45px;
 }
 #main-nav .header-logo {
   width: 255px;
@@ -1114,6 +1149,7 @@ ul.buttons a.secondary:hover i, ul.buttons a.secondary:active i, ul.buttons inpu
 #main-nav i {
   font-size: 28px;
   padding: 11px 1rem;
+  cursor: pointer;
 }
 #main-nav i:hover, #main-nav i:active {
   color: #FF8426;
@@ -1144,8 +1180,8 @@ header {
   height: 35rem;
   padding-top: 40px;
   background-color: #F2EEE3;
-  text-shadow: 0px 1px 3px rgba(120, 94, 77, 0.8), 0px 4px 5px rgba(120, 94, 77, 0.5);
-  background: linear-gradient(to bottom right, rgba(242, 238, 227, 0.5), rgba(255, 195, 139, 0.5) 100%);
+  text-shadow: 0px 1px 3px rgba(58, 45, 37, 0.8), 0px 4px 5px rgba(58, 45, 37, 0.5);
+  background: url("../../res/img/bg/bg_hero.webp") top 30% right 0/cover no-repeat #F2EEE3;
 }
 @media only screen and (min-width: 65rem) {
   header {
@@ -1211,7 +1247,7 @@ main h3 {
 }
 
 #menu-content {
-  background: linear-gradient(to bottom right, rgba(242, 238, 227, 0.5), rgba(255, 195, 139, 0.5) 100%);
+  background: linear-gradient(to bottom right, rgba(242, 238, 227, 0.5), rgba(255, 132, 38, 0.3) 100%);
 }
 #menu-content ul {
   margin-bottom: 3rem;
@@ -1268,23 +1304,23 @@ main h3 {
   color: #FF8426;
 }
 
-#test_content {
+#review-content {
   background: linear-gradient(to bottom, white 90%, #f2eee3);
 }
-#test_content blockquote {
+#review-content blockquote {
   margin: 0;
 }
-#test_content img {
+#review-content img {
   height: 90px;
   width: 90px;
-  border-radius: 5rem;
+  border-radius: 10rem;
 }
-#test_content i {
+#review-content i {
   color: #ffd300;
 }
 
 #contact-content {
-  background: linear-gradient(to bottom right, rgba(242, 238, 227, 0.5), rgba(255, 195, 139, 0.5) 100%);
+  background: linear-gradient(to bottom right, rgba(242, 238, 227, 0.5), rgba(255, 132, 38, 0.3) 100%);
 }
 #contact-content .contact_card {
   margin-bottom: 5rem;
@@ -1327,7 +1363,7 @@ main h3 {
 
 footer {
   color: #fff;
-  background-color: #785E4D;
+  background-color: #3a2d25;
   padding: 0.5rem 0;
 }
 footer nav {
@@ -1366,6 +1402,11 @@ footer nav {
   height: 0;
 }
 
+@media only screen and (min-width: 65rem) {
+  .no-absolute-md {
+    position: initial;
+  }
+}
 /******************************************
 /* JS Styles
 /*******************************************/

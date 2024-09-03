@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>The Coffee Spot</title>
+		<link rel="icon" type="image/jpg" href="res/img/logo/favicon.png">
 
 		<!-- CSS links -->
 		<link rel="stylesheet" href="styles/css/main.css">
@@ -16,15 +17,18 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 	</head>
-	<body>
+	<body class="">
 
 		<!-- Main Nav -->
-		<!-------------
-		TODO
-		- [ ] build mobile side nav
-		- [ ] style header to fill in on scroll
-		-------------->
-		<nav id="side-nav"></nav>
+		<nav id="side-nav" class="hide">
+			<ul class="row center-xs middle-xs text-center">
+				<li class="row side-nav-link"><a href="#">Home</a></li>
+				<li class="row side-nav-link"><a href="#about-content">About</a></li>
+				<li class="row side-nav-link"><a href="#menu-content">Menu</a></li>
+				<li class="row side-nav-link"><a href="#review-content">Review</a></li>
+				<li class="row side-nav-link"><a href="#contact-content">Contact</a></li>
+			</ul>
+		</nav>
 		<nav id="main-nav" class="row between-xs">
 			<section class="col-xs-10 col-md-6">
 				<div class="row middle-xs start-xs">
@@ -35,16 +39,16 @@
 				<div class="row middle-xs end-xs">
 					<ul class="row end-md">
 						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Menu</a></li>
-						<li><a href="#">Reviews</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#about-content">About</a></li>
+						<li><a href="#menu-content">Menu</a></li>
+						<li><a href="#review-content">Reviews</a></li>
+						<li><a href="#contact-content">Contact</a></li>
 					</ul>
 				</div>
 			</section>
 			<section class="col-xs-2 show-xs hide-md">
 				<div class="row middle-xs end-xs">
-					<i class="fas fa-bars"></i>
+					<i id="menu-toggle" class="fas fa-bars"></i></i>
 				</div>
 			</section>
 		</nav>
@@ -57,7 +61,7 @@
 					<h1><span>Welcome to</span><br class=""> The Coffee Spot</h1>
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-5 col-md-offset-2">
-					<p>Every cup carefully ground and roasted to perfection by artisan coffee makers. Find your new favorite spot to study, chat or relax.</p>
+					<p>Every cup carefully ground and roasted to perfection by artisan coffee makers. Come find your new favorite spot to study, chat or relax.</p>
 				</div>
 				<div class="col-xs-12 col-md-offset-2">
 					<ul class="row buttons center-xs start-md">
@@ -175,7 +179,7 @@
 			</section>
 
 			<!-- Testimonials -->
-			<section id="test_content" class="row">
+			<section id="review-content" class="row">
 				<div class="col-xs-12 text-center to-fade-in">
 					<h3>Reviews</h3>
 					<h2>What People Are Saying</h2>
