@@ -28,19 +28,14 @@ https://colorhunt.co/palette/f2eee3baaf92785e4dff8426
 /* Variables
 /*******************************************/
 
-// colors
-// $light-brown: #FFF3CD;
-// $orange: #FF926B;
-// $dark-purple: #4D3E3E;
 $yellow: #ffd300;
 $white: #fff;
-
 $orange: #FF8426;
-$light-orange: #FFC38B;
+$light-orange: lighten($orange, 20%);
 $light-brown: #F2EEE3;
 $brown: #BAAF92;
-$dark-purple: #785E4D;
-$darker-purple: darken($dark-purple, 20%);
+$dark-brown: #785E4D;
+$darker-brown: darken($dark-brown, 25%);
 
 $main-nav-height: 50px;
 
@@ -48,7 +43,7 @@ $main-nav-height: 50px;
 /* Base Styles
 /*******************************************/
 body {
-  color: $darker-purple;
+  color: $dark-brown;
   font-size: 1rem;
   line-height: 1.5rem;
   font-family:'Bitter', Georgia, serif;
@@ -82,9 +77,13 @@ ul {
   }
 }
 a {
-  color: $orange;
-  &:hover, &:active, &:visited {
+  color: $dark-brown;
+  border-bottom: 2px solid $orange;
+  transition: all .1s ease-in-out;
+  text-decoration: none;
+  &:hover, &:active {
     color: $orange;
+    border-bottom: 2px solid $orange;
   }
 }
 ul.buttons {
@@ -110,13 +109,14 @@ ul.buttons {
     color: $white;
     background-color: $orange;
     border-radius: 8px;
-    box-shadow: 2px 3px 0 2px $darker-purple;
+    box-shadow: 2px 3px 0 2px $darker-brown;
     border: 3px solid transparent;
     padding: 0.5rem 0.8rem;
     cursor: pointer;
+    transition: all .15s ease-in-out;
     &:hover, &:active {
       color: $white;
-      background-color: $darker-purple;
+      background-color: $darker-brown;
       box-shadow: 2px 3px 0 2px $orange;
       i {
         color: $orange;
@@ -128,7 +128,7 @@ ul.buttons {
       color: $orange;
       &:hover, &:active {
         color: $white;
-        background-color: $dark-purple;
+        background-color: $dark-brown;
         border: 3px solid transparent;
         i {
           color: $orange;
@@ -147,7 +147,7 @@ body.side-nav-open {
   // padding-right: 15px;
 }
 #side-nav {
-  background-color: rgba($color: $darker-purple, $alpha: 0.95);
+  background-color: rgba($color: $darker-brown, $alpha: 0.95);
   position: fixed;
   padding-top: 50px;
   left: 0;
@@ -155,25 +155,25 @@ body.side-nav-open {
   height: 100%;
   z-index: 10;
   li {
-    border-bottom: 1px solid $brown;
+    // border-bottom: 1px solid $brown;
   }
   a {
     width: 100%;
     padding: 1rem 0;
     color: $white;
+    font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: none;
-    // border-bottom: 2px solid $brown;
+    border-bottom: 2px solid $brown;  
     z-index: 30;
     &:hover, &:active {
       color: $orange;
-      border-bottom-color: $white;
+      border-bottom-color: $orange;
     }
   }
 }
 #main-nav {
   box-shadow: 0 2px 3px 0px black;
-  background-color: $darker-purple;
+  background-color: $darker-brown;
   position: fixed;
   top: 0;
   height: $main-nav-height;
@@ -209,11 +209,10 @@ body.side-nav-open {
   a {
     color: $white;
     font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px dashed transparent;
+    border-bottom-color: transparent;
     &:hover, &:active {
       color: $orange;
-      border-bottom-color: $white;
+      border-bottom-color: $orange;
     }
   }
   & section div {
@@ -228,20 +227,9 @@ header {
   padding-top: 40px;
   background-color: $light-brown;
   text-shadow:
-    0px 1px 3px rgba($darker-purple,0.8),
-    0px 4px 5px rgba($darker-purple,0.5);
-  // background:
-    // linear-gradient(
-    //   to bottom right,
-    //   rgba($light-brown, 50%),
-    //   rgba($light-orange, 50%) 100%
-    // )
+    0px 1px 3px rgba($darker-brown,0.8),
+    0px 4px 5px rgba($darker-brown,0.5);
   background:
-  //   linear-gradient(
-  //     to bottom,
-  //     rgba($dark-purple, 25%) 75%,
-  //     rgba($dark-purple, 0%) 100%
-  //   ),
     url("../../res/img/bg/bg_hero.webp")
     top 30% right 0 / cover
     no-repeat
@@ -270,7 +258,7 @@ header {
 
 main {
   section {
-    padding: 5rem 0;
+    padding: 7rem 2rem;
   }
   h2 {
     font-size: 2rem;
@@ -287,11 +275,19 @@ main {
 
 #about-content {
   background:
-  linear-gradient(
-    to bottom,
-    rgba($white, 100%) 90%,
-    rgba($light-brown, 100%)
-  );
+    linear-gradient(
+      to bottom,
+      rgba($light-orange, 20%),
+      $white 50%,
+      rgba($light-orange, 20%) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba($darker-brown, 30%),
+      rgba($white, 100%) 2%,
+      rgba($white, 100%) 98%,
+      rgba($darker-brown, 30%)
+    );
   aside {
     float: left;
     margin-left: auto;
@@ -311,12 +307,6 @@ main {
 }
 
 #menu-content {
-  background:
-    linear-gradient(
-      to bottom right,
-      rgba($light-brown, 50%),
-      rgba($orange, 30%) 100%
-    );
   ul {
     margin-bottom: 3rem;
   }
@@ -339,7 +329,7 @@ main {
     width: calc(100% - 2rem);
     margin-left: 1rem;
     height: 100%;
-    background-color: rgba($color: $dark-purple, $alpha: 0.7);
+    background-color: rgba($color: $dark-brown, $alpha: 0.7);
     border-radius: 8px;
     @media #{$breakpoint-xs-only} {
       width: calc(100% - .5rem);
@@ -348,7 +338,7 @@ main {
   }
   figcaption, p {
     color: $white;
-    text-shadow: 0 0 5px $dark-purple;
+    text-shadow: 0 0 5px $dark-brown;
   } 
   figure {
     ul, p {
@@ -373,9 +363,28 @@ main {
   background:
     linear-gradient(
       to bottom,
-      rgba($white, 100%) 90%,
-      rgba($light-brown, 100%)
+      rgba($light-orange, 20%),
+      $white 50%,
+      rgba($light-orange, 20%) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba($darker-brown, 30%),
+      rgba($white, 100%) 2%,
+      rgba($white, 100%) 98%,
+      rgba($darker-brown, 30%)
     );
+  figure {
+    padding: 1rem;
+    & .figure-inner {
+      background: $white;
+      border-radius: 8px;
+      box-shadow:
+      2px 3px 0 1px $dark-brown,
+      0 0 2px 0 $dark-brown;
+      padding: 0.5rem;
+    }
+  }
   blockquote {
     margin: 0;
   }
@@ -390,15 +399,12 @@ main {
 }
 
 #contact-content {
-  background:
-    linear-gradient(
-      to bottom right,
-      rgba($light-brown, 50%),
-      rgba($orange, 30%) 100%
-    );
   .contact_card {
     margin-bottom: 5rem;
     padding: 0;
+    i {
+      font-size: 1.3rem;
+    }
   }
   form .row {
     margin-bottom: 1rem;
@@ -420,15 +426,15 @@ main {
     background-color: rgba($color: $white, $alpha: 0.5);
     width: 100%;
     padding: 0.5rem;
-    border: 2px solid $dark-purple;
+    border: 2px solid $dark-brown;
     border-radius: 4px;
     outline: 0;
-    box-shadow: inset 0 0 1px 0 $dark-purple;
+    box-shadow: inset 0 0 1px 0 $dark-brown;
     box-shadow: 2px 3px 0 1px $orange;
     &:focus {
-      color: $dark-purple;
+      color: $dark-brown;
       outline: 0;
-      box-shadow: 2px 3px 0 1px $dark-purple;
+      box-shadow: 2px 3px 0 1px $dark-brown;
       background-color: $white;
       border-color: $orange;
       border: 2px solid $orange;
@@ -438,10 +444,16 @@ main {
 
 footer {
   color: $white;
-  background-color: $darker-purple;
+  background-color: $darker-brown;
   padding: 0.5rem 0;
   nav {
     font-size: .75rem;
+  }
+  span {
+    font-weight: bold;
+  }
+  a {
+    color: $white;
   }
 }
 
@@ -468,12 +480,7 @@ footer {
 }
 .break {
   flex-basis: 100%;
-  height: 0;
-}
-@media #{$breakpoint-md-up} {
-  .no-absolute-md {
-    position:initial;
-  }
+  height: 0;  
 }
 
 /******************************************

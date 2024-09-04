@@ -40,15 +40,15 @@ const handleNavScroll = () => {
 
     window.addEventListener(event, () => {
         const timeout = 250
+
         if (throttleEvent) return
         throttleEvent = true
 
         handleElementFadeIn()
         if
             (event === 'scroll' ||
-            (event === 'scrollend' && (nav.classList.contains('nav-hidden') || window.scrollY < 500)
-            ))
-        {
+            (event === 'scrollend' && (nav.classList.contains('nav-hidden') || window.scrollY < 500))
+            ) {
             handleNavScroll()
         }
         
