@@ -60,7 +60,7 @@ const handleNavScroll = () => {
 
 /* Mobile Nav
 *****************************************************/
-// Menu Toggle
+// Mobile Nav Toggle
 const menuToggle = document.querySelector('#menu-toggle')
 const sideNav = document.querySelector('#side-nav')
 
@@ -85,3 +85,19 @@ menuLinks.forEach((item) => {
         document.body.classList.remove('side-nav-open')
     })
 })
+
+/* Review Carousel
+*****************************************************/
+const slidesContainer = document.getElementById("slides-container")
+const slide = document.querySelector(".slide")
+const prevButton = document.getElementById("slide-arrow-prev")
+const nextButton = document.getElementById("slide-arrow-next")
+
+nextButton.addEventListener("click", () => {
+    const nextScrollTarget = Math.floor(slidesContainer.scrollLeft / slide.clientWidth) + 1
+    slidesContainer.scrollLeft += slide.clientWidth * nextScrollTarget - slidesContainer.scrollLeft
+});
+prevButton.addEventListener("click", () => {
+    const prevScrollTarget = Math.ceil(slidesContainer.scrollLeft / slide.clientWidth) - 1
+    slidesContainer.scrollLeft += slide.clientWidth * prevScrollTarget - slidesContainer.scrollLeft
+});

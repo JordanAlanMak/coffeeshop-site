@@ -84,7 +84,7 @@
 					<h3>About</h3>
 					<h2>Our Journey</h2>
 				</div>
-				<div class="col-xs-12 col-sm-10 col-md-8 to-fade-in">
+				<div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 to-fade-in">
 					<aside class="row center-xs">
 						<img src="res/img/about/coffee-pouring_400.webp" alt="guy pouring coffee">
 					</aside>
@@ -187,62 +187,94 @@
 					<h3>Reviews</h3>
 					<h2>What People Are Saying</h2>
 				</div>
-				 <div class="row center-xs text-center to-fade-in">
-					<figure class="col-sm-8 col-md-4 col-lg-3">
-						<div class="figure-inner">
-							<img src="res/img/testimonial/test_hs_1.webp" alt="charles smiling">
-							<figcaption>
-								<cite>Jackson Schaal</cite>
-							</figcaption>
-							<div>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-							<blockquote>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
-							</blockquote>
-						</div>
-					</figure>
-					<figure class="col-sm-8 col-md-4 col-lg-3">
-						<div class="figure-inner">
-							<img src="res/img/testimonial/test_hs_2.webp" alt="charles smiling">
-							<figcaption>
-								<cite>Alex Starnes</cite>
-							</figcaption>
-							<div>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-							<blockquote>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
-							</blockquote>
-						</div>
-					</figure>
-					<figure class="col-sm-8 col-md-4 col-lg-3">
-						<div class="figure-inner">
-							<img src="res/img/testimonial/test_hs_3.webp" alt="charles smiling">
-							<figcaption>
-								<cite>Marcus Brown</cite>
-							</figcaption>
-							<div>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-							<blockquote>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
-							</blockquote>
-						</div>
-					</figure>
-				 </div>
+				<!-------------
+				TODO
+				- [ ] style next/prev buttons - fontawesome?
+				- [ ] add logic using scrollWidth to make next/prev buttons always go to beginning of next slide
+				-------------->
+				<div class="row text-center to-fade-in center-xs slider-wrapper">
+					<button class="slide-arrow" id="slide-arrow-prev">
+						<i class="fa-solid fa-circle-chevron-left"></i>
+					  </button>
+					  <button class="slide-arrow" id="slide-arrow-next">
+						<i class="fa-solid fa-circle-chevron-right"></i>
+					  </button>
+					<ul id="slides-container" class="slides-container col-xs-12 col-sm-8">
+						<!-- old classes before carousel: col-sm-8 col-md-4 col-lg-3 -->
+						<li class="slide row center-xs">
+							<figure class="col-xs-10">
+								<img src="res/img/testimonial/test_hs_1.webp" alt="man smiling">
+								<figcaption>
+									<cite>Jackson Schaal</cite>
+								</figcaption>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+								<blockquote class="row center-xs">
+									<p class="col-xs-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
+								</blockquote>
+							</figure>
+						</li>
+						<li class="slide row center-xs">
+							<figure class="col-xs-10">
+								<img src="res/img/testimonial/test_hs_2.webp" alt="woman smiling">
+								<figcaption>
+									<cite>Alex Starnes</cite>
+								</figcaption>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+								<blockquote class="row center-xs">
+									<p class="col-xs-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
+								</blockquote>
+							</figure>
+						</li>
+						<li class="slide row center-xs">
+							<figure class="col-xs-10">
+								<img src="res/img/testimonial/test_hs_3.webp" alt="man smiling">
+								<figcaption>
+									<cite>Marcus Brown</cite>
+								</figcaption>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+								<blockquote class="row center-xs">
+									<p class="col-xs-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
+								</blockquote>
+							</figure>
+						</li>
+						<li class="slide row center-xs">
+							<figure class="col-xs-10">
+								<img src="res/img/testimonial/test_hs_4.webp" alt="man smiling">
+								<figcaption>
+									<cite>George Thompson</cite>
+								</figcaption>
+								<div>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+									<i class="fa-solid fa-star"></i>
+								</div>
+								<blockquote class="row center-xs">
+									<p class="col-xs-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae eveniet debitis reprehenderit saepe, ea facere ducimus quidem possimus voluptate? Quis, incidunt! Maiores ducimus molestias inventore temporibus assumenda iste a hic.</p>
+								</blockquote>
+							</figure>
+						</li>
+					</ul>
+				</div>
 			</section>
 
 			<!-- Contact -->

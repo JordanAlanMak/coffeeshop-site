@@ -258,7 +258,7 @@ header {
 
 main {
   section {
-    padding: 7rem 2rem;
+    padding: 7rem 0;
   }
   h2 {
     font-size: 2rem;
@@ -361,40 +361,106 @@ main {
 
 #review-content {
   background:
-    linear-gradient(
-      to bottom,
-      rgba($light-orange, 20%),
-      $white 50%,
-      rgba($light-orange, 20%) 100%
-    ),
-    linear-gradient(
-      to bottom,
-      rgba($darker-brown, 30%),
-      rgba($white, 100%) 2%,
-      rgba($white, 100%) 98%,
-      rgba($darker-brown, 30%)
-    );
-  figure {
-    padding: 1rem;
-    & .figure-inner {
-      background: $white;
-      border-radius: 8px;
-      box-shadow:
-      2px 3px 0 1px $dark-brown,
-      0 0 2px 0 $dark-brown;
-      padding: 0.5rem;
+  linear-gradient(
+    to bottom,
+    rgba($light-orange, 20%),
+    $white 50%,
+    rgba($light-orange, 20%) 100%
+  ),
+  linear-gradient(
+    to bottom,
+    rgba($darker-brown, 30%),
+    rgba($white, 100%) 2%,
+    rgba($white, 100%) 98%,
+    rgba($darker-brown, 30%)
+  );
+  .slide-arrow {
+    position: absolute;
+    display: block;
+    bottom: 10%;
+    margin: auto;
+    border: none;
+    background-color: transparent;
+    font-size: 3rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 100ms;
+    @media #{$breakpoint-xs-only} {
+      display: none;
+    }
+    i {
+      color: $dark-brown;
+      font-size: 3rem;
     }
   }
-  blockquote {
-    margin: 0;
+  .slide-arrow:hover,
+  .slide-arrow:focus {
+    opacity: 1;
+  }
+  #slide-arrow-prev {
+    left: 50%;
+    transform: translateX(-100%);
+  }
+  #slide-arrow-next {
+    right: 50%;
+    transform: translateX(100%);
+  }
+  .slider-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .slides-container {
+    display: flex;
+    overflow-x: scroll;
+    // scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    padding-bottom: 5rem;
+    @media #{$breakpoint-xs-only} {
+      flex-wrap:wrap;
+      padding-bottom: 1rem;
+    }
+  }
+  .slide {
+    flex: 0 0 auto;
+    @media #{$breakpoint-xs-only} {
+      margin: 1rem 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  li {
+    padding: 0;
+  }
+  figure {
+    background: $white;
+    border-radius: 8px;
+    box-shadow:
+      2px 3px 0 1px $dark-brown,
+      0 0 2px 0 $dark-brown;
+    padding: 1rem 0;
   }
   img {
     height: 90px;
     width: 90px;
     border-radius: 10rem;
   }
+  cite {
+    font-weight: bold;
+    font-style: normal;
+    font-family: 'Ubuntu';
+    font-size: 1.2rem;
+  }
   i {
     color: $yellow;
+  }
+  blockquote {
+    margin: 0;
+  }
+  p {
+    padding: 0;
+    margin-bottom: 0;
   }
 }
 

@@ -1211,7 +1211,7 @@ header > section > div {
 }
 
 main section {
-  padding: 7rem 2rem;
+  padding: 7rem 0;
 }
 main h2 {
   font-size: 2rem;
@@ -1306,25 +1306,96 @@ main h3 {
 #review-content {
   background: linear-gradient(to bottom, rgba(255, 190, 140, 0.2), #fff 50%, rgba(255, 190, 140, 0.2) 100%), linear-gradient(to bottom, rgba(42, 33, 27, 0.3), white 2%, white 98%, rgba(42, 33, 27, 0.3));
 }
-#review-content figure {
-  padding: 1rem;
+#review-content .slide-arrow {
+  position: absolute;
+  display: block;
+  bottom: 10%;
+  margin: auto;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 100ms;
 }
-#review-content figure .figure-inner {
+@media only screen and (max-width: 40rem) {
+  #review-content .slide-arrow {
+    display: none;
+  }
+}
+#review-content .slide-arrow i {
+  color: #785E4D;
+  font-size: 3rem;
+}
+#review-content .slide-arrow:hover,
+#review-content .slide-arrow:focus {
+  opacity: 1;
+}
+#review-content #slide-arrow-prev {
+  left: 50%;
+  transform: translateX(-100%);
+}
+#review-content #slide-arrow-next {
+  right: 50%;
+  transform: translateX(100%);
+}
+#review-content .slider-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+#review-content .slides-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  padding-bottom: 5rem;
+}
+@media only screen and (max-width: 40rem) {
+  #review-content .slides-container {
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+  }
+}
+#review-content .slide {
+  flex: 0 0 auto;
+}
+@media only screen and (max-width: 40rem) {
+  #review-content .slide {
+    margin: 1rem 0;
+  }
+  #review-content .slide:last-child {
+    margin-bottom: 0;
+  }
+}
+#review-content li {
+  padding: 0;
+}
+#review-content figure {
   background: #fff;
   border-radius: 8px;
   box-shadow: 2px 3px 0 1px #785E4D, 0 0 2px 0 #785E4D;
-  padding: 0.5rem;
-}
-#review-content blockquote {
-  margin: 0;
+  padding: 1rem 0;
 }
 #review-content img {
   height: 90px;
   width: 90px;
   border-radius: 10rem;
 }
+#review-content cite {
+  font-weight: bold;
+  font-style: normal;
+  font-family: "Ubuntu";
+  font-size: 1.2rem;
+}
 #review-content i {
   color: #ffd300;
+}
+#review-content blockquote {
+  margin: 0;
+}
+#review-content p {
+  padding: 0;
+  margin-bottom: 0;
 }
 
 #contact-content .contact_card {
