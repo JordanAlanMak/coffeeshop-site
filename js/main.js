@@ -86,6 +86,27 @@ menuLinks.forEach((item) => {
     })
 })
 
+/* Menu Gallery
+*****************************************************/
+const galleryNav = document.querySelectorAll('#menu-content ul button')
+const menuGroups = document.querySelectorAll('.menu-group')
+
+galleryNav.forEach(button => {
+    button.addEventListener('click', () => {
+        galleryNav.forEach(button => {
+            button.classList.remove('active')
+        })
+        button.classList.add('active')
+
+        console.log(button.name)
+        menuGroups.forEach(group => {
+            group.classList.add('hidden')
+            group.classList.remove('unhidden')
+        })
+        document.querySelector(`#${button.name}`).classList.add('unhidden')
+    })
+})
+
 /* Review Carousel
 *****************************************************/
 const slidesContainer = document.getElementById("slides-container")

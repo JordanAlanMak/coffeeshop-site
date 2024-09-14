@@ -68,8 +68,8 @@
 				</div>
 				<div class="col-xs-12 col-md-offset-2">
 					<ul class="row buttons center-xs start-md">
-						<li><a href="#"><i class="fa-solid fa-utensils"></i> See Menu</a></li>
-						<li><a href="#"> <i class="fa-solid fa-phone"></i> Contact Us</a></li>
+						<li><a href="#menu-content"><i class="fa-solid fa-utensils"></i> See Menu</a></li>
+						<li><a href="#contact-content"> <i class="fa-solid fa-phone"></i> Contact Us</a></li>
 					</ul>
 				</div>
 			</section>
@@ -93,7 +93,6 @@
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta harum vitae in dolores provident corrupti odio quibusdam doloribus velit qui eos inventore, quos eligendi vel. Sapiente molestias ullam consectetur!</p>
-					<!-- </div> -->
 				</div>
 			</section>
 
@@ -101,83 +100,183 @@
 			<section id="menu-content" class="row center-xs to-fade-in">
 				<div class="col-xs-12 text-center">
 					<h3>Menu</h3>
-					<h2>Order Now</h2>
+					<h2>Find a Favorite</h2>
 				</div>
 
 				<!-- Buttons -->
 				<!-------------
 				TODO
-				- [ ] refactor css to be reused between main nav and these buttons
-				- [ ] remove secondary class and add "active" class instead
+				- [x] refactor css to be reused with other buttons
+				- [x] remove secondary class and add "active" class instead
+				- [x] add event listeners and logic to buttons
 				-------------->
 				<div class="row to-fade-in">
 					<ul class="buttons row center-xs">
-						<li><button>Drinks</button></li>
-						<li><button class="secondary">Bakery</button></li>
-						<li><button class="secondary">Brunch</button></li>
-						<li><button class="secondary">Lunch</button></li>
+						<li><button name="drinks" class="active">Drinks</button></li>
+						<li><button name="bakery">Bakery</button></li>
+						<li><button name="brunch">Brunch</button></li>
+						<li><button name="lunch">Lunch</button></li>
 					</ul>
 				</div>
 
 				<!-- Items -->
-				<div class="row center-xs text-center to-fade-in">
-					<figure class="col-xs-4 col-md-2">
-						<img src="res/img/menu/drinks_latte.webp" alt="latte">
-						<div class="row flex-column center-xs item_overlay">
-							<p><span>$6.99</span></p>
-							<figcaption class="row flex-column center-xs middle-xs">
-								<h4>Hazelnut Latte</h4>
-							</figcaption>
-							<ul class="buttons">
-								<li>
-									<button><i class="fa-solid fa-cart-shopping"></i> Add</button>
-								</li>
-							</ul>
-						</div>
-					</figure>
-					<figure class="col-xs-4 col-md-2">
-						<img src="res/img/menu/drinks_matcha.webp" alt="matcha">
-						<div class="row flex-column center-xs item_overlay hide">
-							<figcaption class="row flex-column center-xs middle-xs">
+				<div class="gallery-wrapper to-fade-in">
+					<div class="row center-xs text-center menu-group" id="drinks">
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/drinks_latte.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
 								<p><span>$6.99</span></p>
-								<h4>Matcha Latte</h4>
-							</figcaption>
-							<ul class="buttons">
-								<li>
-									<button><i class="fa-solid fa-cart-shopping"></i> Add</button>
-								</li>
-							</ul>
-						</div>
-					</figure>
-					<div class="break hide-md"></div>
-					<figure class="col-xs-4 col-md-2">
-						<img src="res/img/menu/drinks_frappe.webp" alt="latte">
-						<div class="row flex-column center-xs item_overlay hide">
-							<p><span>$6.99</span></p>
-							<figcaption class="row flex-column center-xs middle-xs">
-								<h4>Caramel Frappe</h4>
-							</figcaption>
-							<ul class="buttons">
-								<li>
-									<button><i class="fa-solid fa-cart-shopping"></i> Add</button>
-								</li>
-							</ul>
-						</div>
-					</figure>
-					<figure class="col-xs-4 col-md-2">
-						<img src="res/img/menu/drinks_iced_coffee.webp" alt="matcha">
-						<div class="row flex-column center-xs item_overlay hide">
-							<figcaption class="row flex-column center-xs middle-xs">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Hazelnut Latte</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/drinks_matcha.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Matcha Latte</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<div class="break hide-md"></div>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/drinks_frappe.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
 								<p><span>$6.99</span></p>
-								<h4>Iced Coffee</h4>
-							</figcaption>
-							<ul class="buttons">
-								<li>
-									<button><i class="fa-solid fa-cart-shopping"></i> Add</button>
-								</li>
-							</ul>
-						</div>
-					</figure>
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Caramel Frappe</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/drinks_iced_coffee.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Iced Coffee</h4>
+								</figcaption>
+							</div>
+						</figure>
+					</div>
+					<div class="row center-xs text-center menu-group hidden" id="bakery">
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/bakery_cake.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
+								<p><span>$6.99</span></p>
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Blueberry Lemon Cake</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/bakery_mac.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Macaroons</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<div class="break hide-md"></div>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/bakery_muffins.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
+								<p><span>$6.99</span></p>
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Chocolate Muffins</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/bakery_rolls.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Cinnamon Rolls</h4>
+								</figcaption>
+							</div>
+						</figure>
+					</div>
+					<div class="row center-xs text-center menu-group hidden" id="brunch">
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/brunch_eggs.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
+								<p><span>$6.99</span></p>
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Eggs Benedict</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/brunch_lox.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Lox Bagel</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<div class="break hide-md"></div>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/brunch_sausage.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
+								<p><span>$6.99</span></p>
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Sausage and Bacon</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/brunch_waffles.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Pecan Waffles</h4>
+								</figcaption>
+							</div>
+						</figure>
+					</div>
+					<div class="row center-xs text-center menu-group hidden" id="lunch">
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/lunch_chicken.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
+								<p><span>$6.99</span></p>
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Chicken Club Sandwich</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/lunch_salad.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Avocado Salad</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<div class="break hide-md"></div>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/lunch_turkey.webp" alt="latte">
+							<div class="row flex-column center-xs item_overlay">
+								<p><span>$6.99</span></p>
+								<figcaption class="row flex-column center-xs middle-xs">
+									<h4>Turkey Sandwich</h4>
+								</figcaption>
+							</div>
+						</figure>
+						<figure class="col-xs-4 col-md-3">
+							<img src="res/img/menu/lunch_veggie.webp" alt="matcha">
+							<div class="row flex-column center-xs item_overlay">
+								<figcaption class="row flex-column center-xs middle-xs">
+									<p><span>$6.99</span></p>
+									<h4>Veggie Wrap</h4>
+								</figcaption>
+							</div>
+						</figure>
+					</div>
 				</div>
 			</section>
 
@@ -187,11 +286,6 @@
 					<h3>Reviews</h3>
 					<h2>What People Are Saying</h2>
 				</div>
-				<!-------------
-				TODO
-				- [ ] style next/prev buttons - fontawesome?
-				- [ ] add logic using scrollWidth to make next/prev buttons always go to beginning of next slide
-				-------------->
 				<div class="row text-center to-fade-in center-xs slider-wrapper">
 					<button class="slide-arrow" id="slide-arrow-prev">
 						<i class="fa-solid fa-circle-chevron-left"></i>
