@@ -67,11 +67,11 @@ const sideNav = document.querySelector('#side-nav')
 menuToggle.addEventListener('click', (e) => {
     e.preventDefault()
 
-    if (sideNav.classList.contains('hide')) {
-        sideNav.classList.remove('hide')
+    if (!sideNav.classList.contains('unhidden')) {
+        sideNav.classList.add('unhidden')
         document.body.classList.add('side-nav-open')
     } else {
-        sideNav.classList.add('hide')
+        sideNav.classList.remove('unhidden')
         document.body.classList.remove('side-nav-open')
     }
 })
@@ -81,7 +81,7 @@ const menuLinks = document.querySelectorAll('.side-nav-link')
 
 menuLinks.forEach((item) => {
     item.addEventListener('click', () => {
-        sideNav.classList.add('hide')
+        sideNav.classList.remove('unhidden')
         document.body.classList.remove('side-nav-open')
     })
 })

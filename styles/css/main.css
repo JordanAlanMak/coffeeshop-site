@@ -1104,7 +1104,7 @@ body.side-nav-open {
 }
 #side-nav a {
   width: 100%;
-  padding: 1rem 0;
+  padding: 2rem 0;
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
@@ -1220,6 +1220,7 @@ main h3 {
   float: left;
   margin-left: auto;
   margin-right: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
 }
 @media only screen and (min-width: 41rem) {
@@ -1253,20 +1254,26 @@ main h3 {
   }
 }
 #menu-content .item_overlay {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 0;
   left: 0;
   width: calc(100% - 2rem);
   margin-left: 1rem;
   height: 100%;
-  background-color: rgba(255, 190, 140, 0.3);
+  background-color: rgba(255, 190, 140, 0.4);
   border-radius: 8px;
-  transition: opacity 0.1s ease-in-out;
+  transition: all 0.15s ease-in-out;
   cursor: pointer;
 }
 #menu-content .item_overlay:hover {
-  opacity: 1;
+  background-color: rgba(255, 190, 140, 0.2);
+}
+#menu-content .item_overlay:hover p, #menu-content .item_overlay:hover figcaption {
+  opacity: 0;
+}
+#menu-content .item_overlay p, #menu-content .item_overlay figcaption {
+  transition: opacity 0.15s ease-in-out;
 }
 @media only screen and (max-width: 40rem) {
   #menu-content .item_overlay {
@@ -1488,10 +1495,12 @@ footer a {
   position: absolute;
   top: -9999px;
   left: -9999px;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .unhidden {
+  left: initial;
+  top: initial;
   position: initial;
   opacity: 1;
 }

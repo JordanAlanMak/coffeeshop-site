@@ -146,7 +146,7 @@ body.side-nav-open {
   }
   a {
     width: 100%;
-    padding: 1rem 0;
+    padding: 2rem 0;
     color: $white;
     font-size: 1.5rem;
     font-weight: bold;
@@ -279,6 +279,7 @@ main {
     float: left;
     margin-left: auto;
     margin-right: 1rem;
+    margin-bottom: 1rem;
     width: 100%;
     @media #{$breakpoint-sm-up} {
       width: 300px;
@@ -312,19 +313,25 @@ main {
     }
   }
   .item_overlay {
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     top: 0;
     left: 0;
     width: calc(100% - 2rem);
     margin-left: 1rem;
     height: 100%;
-    background-color: rgba($color: $light-orange, $alpha: 0.3);
+    background-color: rgba($color: $light-orange, $alpha: 0.4);
     border-radius: 8px;
-    transition: opacity .1s ease-in-out;
+    transition: all .15s ease-in-out;
     cursor: pointer;
     &:hover {
-      opacity: 1;
+      background-color: rgba($color: $light-orange, $alpha: 0.2);
+      p, figcaption {
+        opacity: 0;
+      }
+    }
+    p, figcaption {
+      transition: opacity .15s ease-in-out;
     }
     @media #{$breakpoint-xs-only} {
       width: calc(100% - .5rem);
@@ -358,19 +365,19 @@ main {
 
 #review-content {
   background:
-  linear-gradient(
-    to bottom,
-    rgba($light-orange, 20%),
-    $white 50%,
-    rgba($light-orange, 20%) 100%
-  ),
-  linear-gradient(
-    to bottom,
-    rgba($darker-brown, 30%),
-    rgba($white, 100%) 2%,
-    rgba($white, 100%) 98%,
-    rgba($darker-brown, 30%)
-  );
+    linear-gradient(
+      to bottom,
+      rgba($light-orange, 20%),
+      $white 50%,
+      rgba($light-orange, 20%) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba($darker-brown, 30%),
+      rgba($white, 100%) 2%,
+      rgba($white, 100%) 98%,
+      rgba($darker-brown, 30%)
+    );
   .slide-arrow {
     position: absolute;
     display: block;
@@ -549,9 +556,11 @@ footer {
   position: absolute;
   top: -9999px;
   left: -9999px;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 .unhidden {
+  left: initial;
+  top: initial;
   position: initial;
   opacity: 1;
 }
