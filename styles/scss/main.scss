@@ -113,11 +113,12 @@ ul.buttons {
     border: 3px solid transparent;
     padding: 0.5rem 0.8rem;
     cursor: pointer;
-    transition: all .15s ease-in-out;
+    transition: all .3s ease-in-out;
     &:hover, &:active, &.active {
       color: $white;
       background-color: $darker-brown;
       box-shadow: 2px 3px 0 2px $orange;
+      transform: perspective(10rem) translateZ(.4rem);
       i {
         color: $orange;
       }

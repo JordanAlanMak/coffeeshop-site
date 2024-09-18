@@ -1075,12 +1075,13 @@ ul.buttons a, ul.buttons input[type=submit], ul.buttons input[type=email], ul.bu
   border: 3px solid transparent;
   padding: 0.5rem 0.8rem;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 ul.buttons a:hover, ul.buttons a:active, ul.buttons a.active, ul.buttons input[type=submit]:hover, ul.buttons input[type=submit]:active, ul.buttons input[type=submit].active, ul.buttons input[type=email]:hover, ul.buttons input[type=email]:active, ul.buttons input[type=email].active, ul.buttons button:hover, ul.buttons button:active, ul.buttons button.active {
   color: #fff;
   background-color: #2a211b;
   box-shadow: 2px 3px 0 2px #FF8426;
+  transform: perspective(10rem) translateZ(0.4rem);
 }
 ul.buttons a:hover i, ul.buttons a:active i, ul.buttons a.active i, ul.buttons input[type=submit]:hover i, ul.buttons input[type=submit]:active i, ul.buttons input[type=submit].active i, ul.buttons input[type=email]:hover i, ul.buttons input[type=email]:active i, ul.buttons input[type=email].active i, ul.buttons button:hover i, ul.buttons button:active i, ul.buttons button.active i {
   color: #FF8426;
